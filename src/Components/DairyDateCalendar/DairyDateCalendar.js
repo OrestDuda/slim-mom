@@ -1,1 +1,1 @@
-import styles from "./DairyDateCalendar.module.css";
+import styles from "./DairyDateCalendar.module.scss";

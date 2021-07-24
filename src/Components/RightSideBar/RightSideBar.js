@@ -1,1 +1,1 @@
-import styles from "./RightSideBar.module.css";
+import styles from "./RightSideBar.module.scss";

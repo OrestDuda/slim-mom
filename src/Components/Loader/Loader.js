@@ -1,1 +1,1 @@
-import styles from "./Loader.module.css";
+import styles from "./Loader.module.scss";

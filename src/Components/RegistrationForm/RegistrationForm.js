@@ -1,1 +1,1 @@
-import styles from "./RegistrationForm.module.css";
+import styles from "./RegistrationForm.module.scss";

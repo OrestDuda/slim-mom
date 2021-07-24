@@ -1,1 +1,1 @@
-import styles from "./CalculatorCalorieForm.module.css";
+import styles from "./CalculatorCalorieForm.module.scss";
