@@ -7,9 +7,21 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
 body {
   font-family: Verdana, serif;
+  font-weight: 700;
 }
+
 ul {
   list-style: none;
 }
+
+//colors
+
+$text-color: #212121;
+$secondary-text-color: #9B9FAA;
+$thirdly-color: #264061;
+$white-color: #ffffff;
+$links-color: #84898B;
+$bg-color: #FC842D;

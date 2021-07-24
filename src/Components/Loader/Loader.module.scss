@@ -1,0 +1,11 @@
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.loader:hover {
+    transition: transform 1s linear;
+    transform: scale(-1, 1) rotateY(180deg);
+}
