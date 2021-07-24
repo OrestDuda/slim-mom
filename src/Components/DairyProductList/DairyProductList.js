@@ -1,1 +1,1 @@
-import styles from "./DairyProductList.module.css";
+import styles from "./DairyProductList.module.scss";

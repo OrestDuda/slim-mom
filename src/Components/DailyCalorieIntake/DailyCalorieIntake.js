@@ -1,1 +1,1 @@
-import styles from "./DailyCalorieIntake.module.css";
+import styles from "./DailyCalorieIntake.module.scss";

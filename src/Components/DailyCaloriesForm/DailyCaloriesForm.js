@@ -1,1 +1,1 @@
-import styles from "./DailyCaloriesForm.module.css";
+import styles from "./DailyCaloriesForm.module.scss";
