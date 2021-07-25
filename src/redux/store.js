@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -8,10 +8,13 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import { authReducer } from './authentication';
-import contactsReducer from './contacts/contactsReducer';
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { authReducer } from "./authentication";
+import contactsReducer from "./contacts/contactsReducer";
+import { foodReducer } from "./food";
+import { userReducer } from "./user";
+import { mealsReducer } from "./meals";
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -23,13 +26,21 @@ const middleware = [
 ];
 
 const authenticationPersistConfig = {
-  key: 'authentication',
+  key: "authentication",
   storage,
-  whitelist: ['token'],
+  whitelist: ["token"],
+};
+
+const userPersistConfig = {
+  key: "userInfo",
+  storage,
 };
 
 const store = configureStore({
   reducer: {
+    meals: mealsReducer,
+    user: persistReducer(userPersistConfig, userReducer),
+    food: foodReducer,
     contacts: contactsReducer,
     authentication: persistReducer(authenticationPersistConfig, authReducer),
   },
