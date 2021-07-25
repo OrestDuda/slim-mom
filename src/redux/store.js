@@ -10,8 +10,6 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { authReducer } from "./authentication";
-import contactsReducer from "./contacts/contactsReducer";
 import { foodReducer } from "./food";
 import { userReducer } from "./user";
 import { mealsReducer } from "./meals";
@@ -25,11 +23,11 @@ const middleware = [
   // logger,
 ];
 
-const authenticationPersistConfig = {
-  key: "authentication",
-  storage,
-  whitelist: ["token"],
-};
+// const authenticationPersistConfig = {
+//   key: "authentication",
+//   storage,
+//   whitelist: ["token"],
+// };
 
 const userPersistConfig = {
   key: "userInfo",
@@ -41,8 +39,6 @@ const store = configureStore({
     meals: mealsReducer,
     user: persistReducer(userPersistConfig, userReducer),
     food: foodReducer,
-    contacts: contactsReducer,
-    authentication: persistReducer(authenticationPersistConfig, authReducer),
   },
   middleware,
   // devTools: process.env.NODE_ENV === 'development',
