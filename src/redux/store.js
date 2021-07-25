@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -8,11 +8,11 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { foodReducer } from "./food";
-import { userReducer } from "./user";
-import { mealsReducer } from "./meals";
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { foodReducer } from './food';
+import { userReducer } from './user';
+import { mealsReducer } from './meals';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -30,7 +30,7 @@ const middleware = [
 // };
 
 const userPersistConfig = {
-  key: "userInfo",
+  key: 'userInfo',
   storage,
 };
 
