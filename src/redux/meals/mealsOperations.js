@@ -1,7 +1,7 @@
 import axios from 'axios';
 import notify from '../../services/notify';
-// import { useSelector } from 'react-redux';
-// import { userSelectors } from '../user';
+import { useSelector } from 'react-redux';
+import mealsSelectors from './mealsSelectors';
 
 import mealsActions from './mealsActions';
 const {
@@ -16,10 +16,10 @@ const {
   deleteFoodFromMealsError,
 } = mealsActions;
 
-const getMealsByDay = date => async dispatch => {
+const getMealsByDay = mealsDate => async dispatch => {
   dispatch(fetchMealsByDayRequest());
   try {
-    const { data } = await axios.get(`/meals/${date}`);
+    const { data } = await axios.get(`/meals/${mealsDate}`);
     dispatch(fetchMealsByDaySuccess(data));
   } catch (error) {
     notify(error.message);
@@ -27,10 +27,12 @@ const getMealsByDay = date => async dispatch => {
   }
 };
 
-const addFoodToMeals = (date, food) => async dispatch => {
+const addFoodToMeals = (foodItem, portionSize) => async dispatch => {
+  const mealsDate = useSelector(mealsSelectors.getMealsDate);
+  const foodToAdd = { foodItem, portionSize };
   dispatch(addFoodToMealsRequest());
   try {
-    const { data } = await axios.patch(`/meals/${date}/food`, food);
+    const { data } = await axios.patch(`/meals/${mealsDate}/food`, foodToAdd);
     dispatch(addFoodToMealsSuccess(data));
   } catch (error) {
     notify(error.message);
@@ -38,10 +40,11 @@ const addFoodToMeals = (date, food) => async dispatch => {
   }
 };
 
-const deleteFoodFromMeals = (date, foodId) => async dispatch => {
+const deleteFoodFromMeals = foodId => async dispatch => {
+  const mealsDate = useSelector(mealsSelectors.getMealsDate);
   dispatch(deleteFoodFromMealsRequest());
   try {
-    await axios.delete(`/meals/${date}/food/${foodId}`);
+    await axios.delete(`/meals/${mealsDate}/food/${foodId}`);
     dispatch(deleteFoodFromMealsSuccess(foodId));
   } catch (error) {
     notify(error.message);

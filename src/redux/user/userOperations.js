@@ -1,8 +1,9 @@
-import axios from "axios";
-import notify from "../../services/notify";
-import { useSelector } from "react-redux";
-import userSelectors from "./userSelectors";
-import userActions from "./userActions";
+import axios from 'axios';
+import notify from '../../services/notify';
+import { useSelector } from 'react-redux';
+import userSelectors from './userSelectors';
+
+import userActions from './userActions';
 const {
   registerRequest,
   registerSuccess,
@@ -26,15 +27,15 @@ const token = {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
   unset() {
-    axios.defaults.headers.common.Authorization = "";
+    axios.defaults.headers.common.Authorization = '';
   },
 };
 
-const register = (userInfo) => async (dispatch) => {
+const register = userInfo => async dispatch => {
   dispatch(registerRequest());
 
   try {
-    const response = await axios.post("/users/signup", userInfo);
+    const response = await axios.post('/users/signup', userInfo);
     token.set(response.data.token);
     dispatch(registerSuccess(response.data));
   } catch (error) {
@@ -43,10 +44,10 @@ const register = (userInfo) => async (dispatch) => {
   }
 };
 
-const logIn = (userInfo) => async (dispatch) => {
+const logIn = userInfo => async dispatch => {
   dispatch(loginRequest());
   try {
-    const { data } = await axios.post("/users/login", userInfo);
+    const { data } = await axios.post('/users/login', userInfo);
     token.set(data.token);
     dispatch(loginSuccess(data));
   } catch (error) {
@@ -55,10 +56,10 @@ const logIn = (userInfo) => async (dispatch) => {
   }
 };
 
-const logOut = () => async (dispatch) => {
+const logOut = () => async dispatch => {
   dispatch(logoutRequest());
   try {
-    await axios.post("/users/logout");
+    await axios.post('/users/logout');
     token.unset();
     dispatch(logoutSuccess());
   } catch (error) {
@@ -81,7 +82,7 @@ const getCurrentUser = () => async (dispatch, getState) => {
   dispatch(getCurrentUserRequest());
 
   try {
-    const { data } = await axios.get("/users/current");
+    const { data } = await axios.get('/users/current');
 
     dispatch(getCurrentUserSuccess(data));
   } catch (error) {
@@ -101,9 +102,8 @@ const getCurrentUser = () => async (dispatch, getState) => {
 //   }
 // };
 
-const saveUserParametersToDB =
-  (heigth, age, currentWeight, desiredWeight, bloodType) =>
-  async (dispatch) => {
+const saveUserParameters =
+  (heigth, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
     const userParameters = {
       heigth,
       age,
@@ -129,7 +129,7 @@ const userOperations = {
   logIn,
   logOut,
   getCurrentUser,
-  saveUserParametersToDB,
+  saveUserParameters,
 };
 
 export default userOperations;
