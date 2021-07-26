@@ -1,15 +1,15 @@
-import { Component } from 'react';
-import { connect } from 'react-redux';
-import {action}
-import CalculatorCalorieForm from './CalculatorCalorieForm';
+import { Component } from "react";
+import { connect } from "react-redux";
+
+import CalculatorCalorieForm from "./CalculatorCalorieForm";
 
 class MainPage extends Component {
-  handleClick = event => {
+  handleClick = (event) => {
     const { name, value } = event.currentTarget;
     this.setState({ [name]: +value });
   };
 
-  submitForm = event => {
+  submitForm = (event) => {
     event.preventDefault();
     const settings = {
       columns: this.state.columns,
@@ -22,14 +22,13 @@ class MainPage extends Component {
   };
 
   reset = () => {
-    this.setState({ columns: '', rows: '', cells: '' });
+    this.setState({ columns: "", rows: "", cells: "" });
   };
 
   render() {
     return (
       <>
         <form className="/" onSubmit={this.submitForm}>
-       
           <CalculatorCalorieForm addInputData={this.handleClick} {...this.state} />
         </form>
       </>

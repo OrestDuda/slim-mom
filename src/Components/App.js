@@ -1,16 +1,13 @@
-
-import MainPage from "./MainPage";
-
+import CalculatorCalorieForm from "../Components/CalculatorCalorieForm";
 
 function App() {
-  return( 
-  <>
-  <section>
-    <MainPage />
-  </section>
-  </>
-
-  )
+  return (
+    <>
+      <section>
+        <CalculatorCalorieForm />
+      </section>
+    </>
+  );
 }
 
 export default App;

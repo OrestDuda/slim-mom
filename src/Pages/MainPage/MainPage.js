@@ -1,19 +1,19 @@
 import React from "react";
 import styles from "./MainPage.module.css";
+import CalculatorCaloriesForm from "../../Components/CalculatorCalorieForm/CalculatorCalorieForm";
 
 const MainPage = () => {
   const title = "Просчитай свою суточную норму калорий прямо сейчас";
 
-  return {
-    /* <div className={styles.wrapper}>
-      <img src="/" className={styles.desctop_img} alt="desctop_img" />
-      <img src="/" alt="tablet_img" className={styles.tablet_img}"/>
-      
-      <div className={style.container}>
-        <DailyCaloriesForm title={title} />
+  return (
+    <div className={styles.wrapper}>
+      {/*  {isModal && <Modal />}
+       */}
+      <div className={styles.container}>
+        <CalculatorCaloriesForm title={title} />
       </div>
-    </div> */
-  };
+    </div>
+  );
 };
 
 export default MainPage;
