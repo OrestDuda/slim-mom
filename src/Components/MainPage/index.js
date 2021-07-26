@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-
+import {action}
 import CalculatorCalorieForm from './CalculatorCalorieForm';
 
 class MainPage extends Component {

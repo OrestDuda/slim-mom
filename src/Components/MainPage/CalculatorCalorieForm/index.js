@@ -3,10 +3,10 @@ import s from "../../Container/Container.module.scss";
 //import React, { useState } from "react";
 //import { useDispatch, useSelector } from "react-redux";
 import BloodGroup from "../BloodGroup";
-import strawberry from "../../../backgroundimages/strawberry.png";
-import image from "../../../backgroundimages/image.png";
-import bckg from "../../../backgroundimages/bckg.png";
-import backgr from "../../../backgroundimages/backgr.png";
+//import strawberry from "../../../backgroundimages/strawberry.png";
+// import image from "../../../backgroundimages/image.png";
+// import bckg from "../../../backgroundimages/bckg.png";
+// import backgr from "../../../backgroundimages/backgr.png";
 const CalculatorCalorieForm = () => {
   /*     clearForm();
     };
@@ -23,13 +23,13 @@ const CalculatorCalorieForm = () => {
     <div className={s.container}>
       <section>
         <div className={style.image}>
-          <div className={style.image_box}>
+          {/* <div className={style.image_box}>
             <img className={style.overlay_strawberry} src={strawberry} alt="strawberry" width="286px" height="289px" />
             <img className={style.overlay_bannana} src={image} alt="bannana" width="773px" height="552px" />
             <img className={style.overlay_white} src={bckg} alt="backgroundwhite" width="602px" height="816px" />
           </div>
           <img className={style.overlay_leaves} src={backgr} alt="leaves" width="746px" height="846px" />
-        </div>
+        </div> */}
         <div className={style.title}>Просчитай свою суточную норму калорий прямо сейчас</div>
 
         <form
