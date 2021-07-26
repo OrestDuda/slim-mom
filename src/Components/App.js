@@ -1,7 +1,16 @@
-import React, { Component } from "react";
+
+import MainPage from "./MainPage";
+
 
 function App() {
-  return <></>;
+  return( 
+  <>
+  <section>
+    <MainPage />
+  </section>
+  </>
+
+  )
 }
 
 export default App;
