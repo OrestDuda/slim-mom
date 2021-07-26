@@ -1,13 +1,7 @@
-import CalculatorCalorieForm from "../Components/CalculatorCalorieForm";
+import React, { Component } from "react";
 
 function App() {
-  return (
-    <>
-      <section>
-        <CalculatorCalorieForm />
-      </section>
-    </>
-  );
+  return <></>;
 }
 
 export default App;
