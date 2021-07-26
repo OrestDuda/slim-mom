@@ -20,6 +20,12 @@ const {
   addUserInfoRequest,
   addUserInfoSuccess,
   addUserInfoError,
+  calculateUserRequest,
+  calculateUserSuccess,
+  calculateUserError,
+  publicUserCalculateRequest,
+  publicUserCalculateSuccess,
+  publicUserCalculateError,
 } = userActions;
 
 const token = {
@@ -31,11 +37,13 @@ const token = {
   },
 };
 
-const register = userInfo => async dispatch => {
+const register = (email, name, password) => async dispatch => {
+  const userInfo = { email, name, password };
+
   dispatch(registerRequest());
 
   try {
-    const response = await axios.post('/users/signup', userInfo);
+    const response = await axios.post('/users/registration', userInfo);
     token.set(response.data.token);
     dispatch(registerSuccess(response.data));
   } catch (error) {
@@ -44,7 +52,9 @@ const register = userInfo => async dispatch => {
   }
 };
 
-const logIn = userInfo => async dispatch => {
+const logIn = (email, password) => async dispatch => {
+  const userInfo = { email, password };
+
   dispatch(loginRequest());
   try {
     const { data } = await axios.post('/users/login', userInfo);
@@ -91,17 +101,6 @@ const getCurrentUser = () => async (dispatch, getState) => {
   }
 };
 
-// const getUserParameters = (userId) => async (dispatch) => {
-//   dispatch(fetchUserInfoRequest());
-//   try {
-//     const { data } = await axios.get(`/users/${userId}`);
-//     dispatch(fetchUserInfoSuccess(data));
-//   } catch (error) {
-//     notify(error.message);
-//     dispatch(fetchUserInfoError(error));
-//   }
-// };
-
 const saveUserParameters =
   (heigth, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
     const userParameters = {
@@ -124,12 +123,54 @@ const saveUserParameters =
     }
   };
 
+const calculateLoggedInUser =
+  (heigth, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
+    const userParameters = {
+      heigth,
+      age,
+      currentWeight,
+      desiredWeight,
+      bloodType,
+    };
+
+    dispatch(calculateUserRequest());
+    try {
+      const { data } = await axios.patch(`/calculator`, userParameters);
+      dispatch(calculateUserSuccess(data));
+    } catch (error) {
+      notify(error.message);
+      dispatch(calculateUserError(error));
+    }
+  };
+
+const publicUserCalculate =
+  (heigth, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
+    const userParameters = {
+      heigth,
+      age,
+      currentWeight,
+      desiredWeight,
+      bloodType,
+    };
+
+    dispatch(publicUserCalculateRequest());
+    try {
+      const { data } = await axios.patch(`/public`, userParameters);
+      dispatch(publicUserCalculateSuccess(data));
+    } catch (error) {
+      notify(error.message);
+      dispatch(publicUserCalculateError(error));
+    }
+  };
+
 const userOperations = {
   register,
   logIn,
   logOut,
   getCurrentUser,
   saveUserParameters,
+  calculateLoggedInUser,
+  publicUserCalculate,
 };
 
 export default userOperations;

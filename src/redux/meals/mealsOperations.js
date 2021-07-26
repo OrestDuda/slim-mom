@@ -19,7 +19,7 @@ const {
 const getMealsByDay = mealsDate => async dispatch => {
   dispatch(fetchMealsByDayRequest());
   try {
-    const { data } = await axios.get(`/meals/${mealsDate}`);
+    const { data } = await axios.get(`/journal/${mealsDate}`);
     dispatch(fetchMealsByDaySuccess(data));
   } catch (error) {
     notify(error.message);
@@ -28,11 +28,11 @@ const getMealsByDay = mealsDate => async dispatch => {
 };
 
 const addFoodToMeals = (foodItem, portionSize) => async dispatch => {
-  const mealsDate = useSelector(mealsSelectors.getMealsDate);
   const foodToAdd = { foodItem, portionSize };
+
   dispatch(addFoodToMealsRequest());
   try {
-    const { data } = await axios.patch(`/meals/${mealsDate}/food`, foodToAdd);
+    const { data } = await axios.post(`/journal`, foodToAdd);
     dispatch(addFoodToMealsSuccess(data));
   } catch (error) {
     notify(error.message);
@@ -44,7 +44,7 @@ const deleteFoodFromMeals = foodId => async dispatch => {
   const mealsDate = useSelector(mealsSelectors.getMealsDate);
   dispatch(deleteFoodFromMealsRequest());
   try {
-    await axios.delete(`/meals/${mealsDate}/food/${foodId}`);
+    await axios.delete(`/journal/${mealsDate}/${foodId}`);
     dispatch(deleteFoodFromMealsSuccess(foodId));
   } catch (error) {
     notify(error.message);

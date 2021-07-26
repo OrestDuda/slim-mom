@@ -13,9 +13,17 @@ const {
   getCurrentUserError,
   addUserInfoSuccess,
   addUserInfoError,
+  calculateUserSuccess,
+  calculateUserError,
+  publicUserCalculateSuccess,
+  publicUserCalculateError,
 } = userActions;
 
 const initialUser = { name: null, email: null, password: null };
+
+const publicUser = createReducer(initialUser, {
+  [publicUserCalculateSuccess]: (_, { payload }) => payload,
+});
 
 const user = createReducer(initialUser, {
   [registerSuccess]: (_, actions) => actions.payload.user,
@@ -23,6 +31,7 @@ const user = createReducer(initialUser, {
   [logoutSuccess]: () => initialUser,
   [getCurrentUserSuccess]: (_, { payload }) => payload,
   [addUserInfoSuccess]: (_, { payload }) => payload,
+  [calculateUserSuccess]: (_, { payload }) => payload,
 });
 
 const token = createReducer(null, {
@@ -36,11 +45,15 @@ const loggedIn = createReducer(false, {
   [loginSuccess]: () => true,
   [getCurrentUserSuccess]: () => true,
   [addUserInfoSuccess]: () => true,
+  [calculateUserSuccess]: () => true,
+  [calculateUserError]: () => false,
   [registerError]: () => false,
   [loginError]: () => false,
   [getCurrentUserError]: () => false,
   [logoutSuccess]: () => false,
   [addUserInfoError]: () => false,
+  [publicUserCalculateSuccess]: () => false,
+  [publicUserCalculateError]: () => false,
 });
 
 const setError = (_, { payload }) => payload;
@@ -51,6 +64,8 @@ const error = createReducer(null, {
   [logoutError]: setError,
   [getCurrentUserError]: setError,
   [addUserInfoError]: setError,
+  [calculateUserError]: setError,
+  [publicUserCalculateError]: setError,
 });
 
 export default combineReducers({
@@ -58,4 +73,5 @@ export default combineReducers({
   error,
   token,
   loggedIn,
+  publicUser,
 });

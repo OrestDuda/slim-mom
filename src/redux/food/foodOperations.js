@@ -6,15 +6,15 @@ const {
   fetchFoodRequest,
   fetchFoodSuccess,
   fetchFoodError,
-  getProhibitedFoodByBloodTypeRequest,
-  getProhibitedFoodByBloodTypeSuccess,
-  getProhibitedFoodByBloodTypeError,
+  fetchFoodByQueryRequest,
+  fetchFoodByQuerySuccess,
+  fetchFoodByQueryError,
 } = foodActions;
 
 const getFood = () => async dispatch => {
   dispatch(fetchFoodRequest());
   try {
-    const { data } = await axios.get('/food');
+    const { data } = await axios.get('/catalogue');
     dispatch(fetchFoodSuccess(data));
   } catch (error) {
     notify(error.message);
@@ -22,20 +22,20 @@ const getFood = () => async dispatch => {
   }
 };
 
-const getProhibitedFoodByBloodType = bloodType => async dispatch => {
-  dispatch(getProhibitedFoodByBloodTypeRequest());
+const getFoodByQuery = query => async dispatch => {
+  dispatch(fetchFoodByQueryRequest());
   try {
-    const { data } = await axios.get(`/food/${bloodType}`);
-    dispatch(getProhibitedFoodByBloodTypeSuccess(data));
+    const { data } = await axios.get(`/catalogue?search=${query}`);
+    dispatch(fetchFoodByQuerySuccess(data));
   } catch (error) {
     notify(error.message);
-    dispatch(getProhibitedFoodByBloodTypeError(error));
+    dispatch(fetchFoodByQueryError(error));
   }
 };
 
 const foodOperations = {
   getFood,
-  getProhibitedFoodByBloodType,
+  getFoodByQuery,
 };
 
 export default foodOperations;
