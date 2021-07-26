@@ -6,15 +6,15 @@ const {
   fetchFoodRequest,
   fetchFoodSuccess,
   fetchFoodError,
-  getProhibitedFoodByBloodTypeRequest,
-  getProhibitedFoodByBloodTypeSuccess,
-  getProhibitedFoodByBloodTypeError,
   changeFilter,
+  fetchFoodByQueryRequest,
+  fetchFoodByQuerySuccess,
+  fetchFoodByQueryError,
 } = foodActions;
 
 const food = createReducer([], {
   [fetchFoodSuccess]: (_, { payload }) => payload,
-  [getProhibitedFoodByBloodTypeSuccess]: (_, { payload }) => payload,
+  [fetchFoodByQuerySuccess]: (_, { payload }) => payload,
 });
 
 const foodFilter = createReducer('', {
@@ -25,16 +25,16 @@ const loading = createReducer(false, {
   [fetchFoodRequest]: () => true,
   [fetchFoodSuccess]: () => false,
   [fetchFoodError]: () => false,
-  [getProhibitedFoodByBloodTypeRequest]: () => true,
-  [getProhibitedFoodByBloodTypeSuccess]: () => false,
-  [getProhibitedFoodByBloodTypeError]: () => false,
+  [fetchFoodByQueryRequest]: () => true,
+  [fetchFoodByQueryError]: () => false,
+  [fetchFoodByQuerySuccess]: () => false,
 });
 
 const setError = (_, { payload }) => payload;
 
 const error = createReducer(null, {
   [fetchFoodError]: setError,
-  [getProhibitedFoodByBloodTypeError]: setError,
+  [fetchFoodError]: setError,
 });
 
 export default combineReducers({

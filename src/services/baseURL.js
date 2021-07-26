@@ -1,3 +1,3 @@
-import axios from "axios";
+import axios from 'axios';
 
-axios.defaults.baseURL = "hello.com";
+axios.defaults.baseURL = 'https://slim-mom-beckend.herokuapp.com/api';
