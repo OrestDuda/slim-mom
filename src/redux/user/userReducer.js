@@ -20,8 +20,14 @@ const {
 } = userActions;
 
 const initialUser = { name: null, email: null, password: null };
-
-const publicUser = createReducer(initialUser, {
+const userParameters = {
+  height: '',
+  age: '',
+  weight: '',
+  desiredWeight: '',
+  bloodType: '',
+};
+const publicUser = createReducer(userParameters, {
   [publicUserCalculateSuccess]: (_, { payload }) => payload,
 });
 
