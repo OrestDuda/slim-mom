@@ -102,9 +102,9 @@ const getCurrentUser = () => async (dispatch, getState) => {
 };
 
 const saveUserParameters =
-  (heigth, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
+  (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
     const userParameters = {
-      heigth,
+      height,
       age,
       currentWeight,
       desiredWeight,
@@ -124,9 +124,9 @@ const saveUserParameters =
   };
 
 const calculateLoggedInUser =
-  (heigth, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
+  (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
     const userParameters = {
-      heigth,
+      height,
       age,
       currentWeight,
       desiredWeight,
@@ -144,9 +144,9 @@ const calculateLoggedInUser =
   };
 
 const publicUserCalculate =
-  (heigth, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
+  (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
     const userParameters = {
-      heigth,
+      height,
       age,
       currentWeight,
       desiredWeight,

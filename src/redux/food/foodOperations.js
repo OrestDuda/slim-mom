@@ -14,7 +14,7 @@ const {
 const getFood = () => async dispatch => {
   dispatch(fetchFoodRequest());
   try {
-    const { data } = await axios.get('/catalogue');
+    const { data } = await axios.get('/catalogue/all');
     dispatch(fetchFoodSuccess(data));
   } catch (error) {
     notify(error.message);

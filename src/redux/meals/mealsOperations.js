@@ -27,8 +27,8 @@ const getMealsByDay = mealsDate => async dispatch => {
   }
 };
 
-const addFoodToMeals = (foodItem, portionSize) => async dispatch => {
-  const foodToAdd = { foodItem, portionSize };
+const addFoodToMeals = (foodItem, portionSize, onDay) => async dispatch => {
+  const foodToAdd = { foodItem, portionSize, onDay };
 
   dispatch(addFoodToMealsRequest());
   try {
