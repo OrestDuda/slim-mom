@@ -2,8 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93b6a020-457b-478e-9240-6641e7118be9" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App.js" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/.huskyrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/slim-mom.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.lintstagedrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/BasicButton/BasicButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/BasicButton/BasicButton.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/CalculatorCalorieForm/BloodGroup/BloodGroup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/CalculatorCalorieForm/BloodGroup/BloodGroup.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/CalculatorCalorieForm/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/food/foodActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/food/foodOperations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/food/foodReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/food/foodSelectors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/food/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/meals/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/meals/mealsActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/meals/mealsOperations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/meals/mealsReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/meals/mealsSelectors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/user/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/user/userActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/user/userOperations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/user/userReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/user/userSelectors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/baseURL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/notify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CalculatorCalorieForm/CalculatorCalorieForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CalculatorCalorieForm/CalculatorCalorieForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CalculatorCalorieForm/CalculatorCalorieForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CalculatorCalorieForm/CalculatorCalorieForm.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/DailyCalorieIntake/DailyCalorieIntake.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/DailyCalorieIntake/DailyCalorieIntake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/DailyCaloriesForm/DailyCaloriesForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/DailyCaloriesForm/DailyCaloriesForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/MainPage/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/MainPage/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +84,29 @@
       <option name="presentableId" value="Default" />
       <updated>1627494621983</updated>
       <workItem from="1627494628413" duration="416000" />
+<<<<<<< Updated upstream
       <workItem from="1627495486369" duration="173000" />
+=======
+      <workItem from="1627495486369" duration="539000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< Updated upstream
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+>>>>>>> Stashed changes
 </project>
