@@ -1,6 +1,6 @@
 import styles from "./Loader.module.scss";
 import Loader from "react-loader-spinner";
-import React from "react":
+import React from "react";
 
 const Loaders=()=>{
     return (
