@@ -13,3 +13,19 @@ body {
 ul {
   list-style: none;
 }
+
+//colors
+
+$text-color: #212121;
+$secondary-text-color: #9B9FAA;
+$thirdly-color: #264061;
+$white-color: #ffffff;
+$links-color: #84898B;
+$bg-color: #FC842D;
+
+// button
+
+button {
+  cursor: pointer;
+  outline: none;
+}
