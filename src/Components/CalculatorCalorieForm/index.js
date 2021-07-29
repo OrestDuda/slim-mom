@@ -1,15 +1,14 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CalculatorPrimaryInput from './';
 import userOperations from '../../redux/user/userOperations';
 //import FormValidation from './FormValidation';
-import style from '../../Components/CalculatorCalorieForm/CalculatorCalorieForm.module.scss';
-import s from '../Container/Container.module.scss';
+import styles from '../../Components/CalculatorCalorieForm/CalculatorCalorieForm.module.scss';
 
 class CalculatorCaloriesForm extends Component {
   handleClick = event => {
     const { name, value } = event.currentTarget;
-    this.setState({ [name]: +value });
+    this.setState({ [name]: + value });
   };
 
   submitForm = event => {
@@ -39,22 +38,20 @@ class CalculatorCaloriesForm extends Component {
   render() {
     return (
       <div>
-        <div className={s.container}>
-          <div className={style.title}>
+          <div className={styles.title}>
             Просчитай свою суточную норму калорий прямо сейчас
           </div>
-          <form className={style.form} onSubmit={this.submitForm}>
+          <form className={styles.form} onSubmit={this.submitForm}>
             <CalculatorPrimaryInput
               addInputData={this.handleClick}
               {...this.state}
             />
-            <div className={style.btn_wrapper}>
-              <button type="submit" className={style.button}>
+            <div className={styles.btn_wrapper}>
+              <button type="submit" className={styles.button}>
                 Похудеть
               </button>
             </div>
           </form>
-        </div>
       </div>
     );
   }
@@ -71,3 +68,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(CalculatorCaloriesForm);
+

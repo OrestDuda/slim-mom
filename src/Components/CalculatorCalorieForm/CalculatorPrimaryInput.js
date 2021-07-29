@@ -1,7 +1,6 @@
-import style from './CalculatorCalorieForm.module.scss';
-
-//import React, { useState } from 'react';
-//import { useDispatch, useSelector } from "react-redux";
+import styles from './CalculatorCalorieForm.module.scss';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 
 const CalculatorPrimaryInput = ({
   addInputData,
@@ -19,55 +18,55 @@ const CalculatorPrimaryInput = ({
   };
   return (
     <>
-      <div className={style.input_wrapper}>
-        <div className={style.left_input}>
-          <label className={style.label} htmlFor="height">
+      <div className={styles.input_wrapper}>
+        <div className={styles.left_input}>
+          <label className={styles.label} htmlFor="height">
             Рост *
           </label>
           <input
-            className={style.input}
+            className={styles.input}
             type="number"
             name="height"
             value={height}
             onChange={addInputData}
           />
-          <label className={style.label} htmlFor="age">
+          <label className={styles.label} htmlFor="age">
             Возраст *
           </label>
           <input
-            className={style.input}
+            className={styles.input}
             type="number"
             name="age"
             value={age}
             onChange={addInputData}
           />
-          <label className={style.label} htmlFor="weight">
+          <label className={styles.label} htmlFor="weight">
             Текущий вес *
           </label>
           <input
-            className={style.input}
+            className={styles.input}
             type="number"
             name="weight"
             value={weight}
             onChange={addInputData}
           />
         </div>
-        <div className={style.right_input}>
-          <label className={style.label} htmlFor="desiredWeight">
+        <div className={styles.right_input}>
+          <label className={styles.label} htmlFor="desiredWeight">
             Желаемый вес *
           </label>
           <input
-            className={style.input}
+            className={styles.input}
             type="number"
             name="desiredWeight"
             value={desiredWeight}
             onChange={addInputData}
           />
-          <div className={style.wrapper}>
-            <p className={style.label_radio_boxes}>Группа крови *</p>
+          <div className={styles.wrapper}>
+            <p className={styles.label_radio_boxes}>Группа крови *</p>
 
-            <div className={style.radio_boxes}>
-              <label className={style.label_radio} htmlFor="bloodType_1">
+            <div className={styles.radio_boxes}>
+              <label className={styles.label_radio} htmlFor="bloodType_1">
                 <input
                   id="bloodType_1"
                   type="radio"
@@ -78,7 +77,7 @@ const CalculatorPrimaryInput = ({
                 />
                 1
               </label>
-              <label className={style.label_radio} htmlFor="bloodType_2">
+              <label className={styles.label_radio} htmlFor="bloodType_2">
                 <input
                   id="bloodType_2"
                   type="radio"
@@ -89,7 +88,7 @@ const CalculatorPrimaryInput = ({
                 />
                 2
               </label>
-              <label className={style.label_radio} htmlFor="bloodType_3">
+              <label className={styles.label_radio} htmlFor="bloodType_3">
                 <input
                   id="bloodType_3"
                   type="radio"
@@ -100,7 +99,7 @@ const CalculatorPrimaryInput = ({
                 />
                 3
               </label>
-              <label className={style.label_radio} htmlFor="bloodType_4">
+              <label className={styles.label_radio} htmlFor="bloodType_4">
                 <input
                   id="bloodType_4"
                   type="radio"

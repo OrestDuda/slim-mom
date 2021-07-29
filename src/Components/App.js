@@ -6,7 +6,7 @@ import CalculatorCalorieForm from '../Components/CalculatorCalorieForm';
 function App() {
     return (
         <>
-            <Header></Header>
+            <Header/>
             <section>
                 <CalculatorCalorieForm />
             </section>
