@@ -14,7 +14,7 @@ const FormValidation = Yup.object().shape({
     .min(14, 'Введите Ваш возраст от 14 лет')
     .max(99, 'Введите Ваш возраст до 100 лет')
     .integer(),
-  weight: Yup.number()
+  currentWeight: Yup.number()
     .required('Обязательное поле ввода')
     .typeError('Форма принимает, только числовое значение')
     .min(20, 'Введите Ваш текущий вес от 20 кг')

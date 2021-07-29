@@ -23,7 +23,7 @@ const initialUser = { name: null, email: null, password: null };
 const userParameters = {
   height: '',
   age: '',
-  weight: '',
+  currentWeight: '',
   desiredWeight: '',
   bloodType: '',
 };
