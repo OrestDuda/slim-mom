@@ -144,7 +144,7 @@ const calculateLoggedInUser =
   };
 
 const publicUserCalculate =
-  (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
+  ({height, age, currentWeight, desiredWeight, bloodType}) => async dispatch => {
     const userParameters = {
       height,
       age,
