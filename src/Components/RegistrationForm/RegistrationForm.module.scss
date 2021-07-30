@@ -1,0 +1,45 @@
+.container {
+  margin-top: 40px;
+}
+
+.title {
+  color: #fc842d;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.btnThumb {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
+}
+.regBtn {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-top: 157px;
+  }
+  .title {
+    text-align: start;
+    margin-bottom: 40px;
+  }
+  .btnThumb {
+    flex-direction: row;
+  }
+  .regBtn {
+    margin-bottom: 0px;
+    margin-right: 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    margin-top: 95px;
+  }
+  .title {
+    margin-bottom: 60px;
+  }
+}
