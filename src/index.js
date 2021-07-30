@@ -1,24 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
-import "./assets/fonts/fonts.scss"
-import App from './Components/App';
-import './services/baseURL';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";
 
 import store from './redux/store';
+import { BrowserRouter } from "react-router-dom";
+import './index.scss';
+import "./assets/fonts/fonts.scss"
+import './services/baseURL';
+import App from './Components/App';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <Provider store={store.store}>
-        <PersistGate loading={null} persistor={store.persistor}>
+  <React.StrictMode>
+    <Provider store={store.store}>
+      <PersistGate loading={null} persistor={store.persistor}>
+        <BrowserRouter>
           <App />
-        </PersistGate>
-      </Provider>
-    </React.StrictMode>
-  </BrowserRouter>,
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root'),
 );

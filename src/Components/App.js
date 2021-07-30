@@ -1,47 +1,53 @@
-import React, { Component } from 'react';
-import { Route, Switch } from "react-router";
-import { useSelector } from 'react-redux';
-
-import PrivateRoute from './PrivateRoute/PrivateRoute';
-import PublicRoute from './PublicRoute/PublicRoute';
+import React, { useEffect, Suspense, lazy } from "react";
+import { Switch, Route , Redirect} from "react-router-dom";
+import { useDispatch } from "react-redux";
+import userOperations from "../redux/user/userOperations";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Header from './Header/Header';
-import CalculatorCalorieForm from '../Components/CalculatorCalorieForm';
-import LoginForm from './LoginForm/LoginForm';
-import RegistrationForm from './RegistrationForm/RegistrationForm';
+import Container from './Container/Container';
 
-import userSelectors from '../redux/user/userSelectors'
+const MainPage = lazy(() =>
+  import("../Pages/MainPage/MainPage" /* webpackChunkName: "home" */)
+);
+const LoginPage = lazy(() =>
+  import("../Pages/LoginPage/LoginPage" /* webpackChunkName: "login" */)
+);
+const RegistrationPage = lazy(() =>
+  import("../Pages/RegistrationPage/RegistrationPage" /* webpackChunkName: "registration" */)
+);
+const DairyPage = lazy(() =>
+  import("../Pages/DairyPage/DairyPage" /* webpackChunkName: "dairy" */)
+);
+const CalculatorPage = lazy(() =>
+  import("../Pages/CalculatorPage/CalculatorPage" /* webpackChunkName: "calc" */)
+);
 
-
-function App() {
-    const isAuth = false
-        // useSelector(userSelectors.getIfLoggedIn())
-
+export default function App() {
+  //to check if loggedIn user
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(userOperations.getCurrentUser());
+  // }, [dispatch]);
 
     return (
         <>
-        <Header />
+          <Header/>
+          <Container>
+          <Suspense
+            fallback={<Loader type="ThreeDots" color="#fc842d" height={130} width={130} style={{ textAlign: "center", }} />}
+          >
             <Switch>
-                <Route path="/calculator" component={<></>} />
-                <PublicRoute
-                    path="/registration"
-                    component={RegistrationForm}
-                    restricted
-                    redirectTo="/home"
-                />
-                <PublicRoute
-                    path="/login"
-                    component={LoginForm}
-                    restricted
-                    redirectTo="/diary"
-                />
-                <PrivateRoute
-                    path="/diary"
-                    component={<></>}
-                    isAuth={isAuth}
-                    redirectTo="/login"
-                />     
+              <Route path="/" exact component={MainPage} />
+              <Route path="/registration" component={RegistrationPage} />
+              <Route path="/login" component={LoginPage} />
+              <Route path="/dairy"  component={DairyPage} />
+              <Route path="/calculator"  component={CalculatorPage} />
+              <Redirect to="/" />
             </Switch>
+          </Suspense>
+          </Container>
         </>
     );
 }
-export default App;
+
