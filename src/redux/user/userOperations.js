@@ -52,7 +52,7 @@ const register = (email, name, password) => async dispatch => {
   }
 };
 
-const logIn = (email, password) => async dispatch => {
+const logIn = ({email, password}) => async dispatch => {
   const userInfo = { email, password };
 
   dispatch(loginRequest());

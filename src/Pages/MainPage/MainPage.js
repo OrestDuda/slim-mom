@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './MainPage.module.css';
-import CalculatorCalorieFrom from '../../Components/CalculatorCalorieForm/CalculatorCalorieForm';
+import DailyCaloriesForm from '../../Components/DailyCaloriesForm/DailyCaloriesForm';
 
 const MainPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-          <CalculatorCalorieFrom />
+          <DailyCaloriesForm />
       </div>
     </div>
   );

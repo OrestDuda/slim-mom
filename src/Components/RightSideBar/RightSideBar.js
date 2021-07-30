@@ -1,7 +1,17 @@
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import userOperations from "../../redux/user/userOperations";
 import styles from './RightSideBar.module.scss';
+import userSelectors from "../../redux/user/userSelectors";
 
+export default function RightSideBar (){
+  // const currentUser = useSelector(userSelectors.getUser)
+  // const notRecommended = useSelector(userSelectors.getUserNotRecommendedFood);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(userOperations.getCurrentUser());
+  // }, [dispatch]);
 
-const RightSideBar = () => {
   return (
     <div className={styles.container}>
         <div className={styles.summary}>
@@ -31,11 +41,9 @@ const RightSideBar = () => {
         <div className={styles.menu}>
           <h2 className={styles.title}>Нерекомендуемые продукты</h2>
           <span className={styles.text}>
-          Здесь будет отображаться Ваш рацион
+
         </span>
         </div>
       </div>
     );
-  }
-
-export default RightSideBar;
+  };

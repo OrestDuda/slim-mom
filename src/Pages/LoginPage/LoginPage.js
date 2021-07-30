@@ -4,7 +4,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Container from '../../Components/Container/Container';
-import Header from '../../Components/Header/Header';
 import LoginForm from '../../Components/LoginForm/LoginForm';
 // import Spinner from '../../Components/Spinner/Spinner';
 // import isLoading from '../';
@@ -14,7 +13,6 @@ const LoginPage = () => {
 
   return (
     <>
-      <Header />
         <Container>
           <LoginForm />
         </Container>
