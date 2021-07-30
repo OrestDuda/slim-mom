@@ -32,8 +32,6 @@ export default function App() {
 
     return (
         <>
-          <Header/>
-          <Container>
           <Suspense
             fallback={<Loader type="ThreeDots" color="#fc842d" height={130} width={130} style={{ textAlign: "center", }} />}
           >
@@ -46,7 +44,6 @@ export default function App() {
               <Redirect to="/" />
             </Switch>
           </Suspense>
-          </Container>
         </>
     );
 }

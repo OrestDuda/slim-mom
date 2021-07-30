@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";
-
 import store from './redux/store';
-import { BrowserRouter } from "react-router-dom";
 import './index.scss';
 import "./assets/fonts/fonts.scss"
 import './services/baseURL';

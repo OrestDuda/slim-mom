@@ -17,7 +17,7 @@ import userOperations from '../../redux/user/userOperations';
 // import isLoading from '../';
 
 import FormCheck from '../FormCheck/FormCheck';
-import Button from '../BasicButton/BasicButton';
+// import Button from '../BasicButton/BasicButton';
 import styles from './RegistrationForm.module.scss';
 
 const registrationSchema = Yup.object().shape({
@@ -89,10 +89,10 @@ const RegistrationForm = () => {
           />
           <div className={styles.btnThumb}>
             <Link to="/login" className={styles.regBtn}>
-              <Button view="btnReg">Вход</Button>
+              {/*<Button view="btnReg">Вход</Button>*/}
             </Link>
             {/* <Button disabled={loading}>Регистрация</Button> */}
-            <Button>Регистрация</Button>
+            {/*<Button>Регистрация</Button>*/}
           </div>
         </Form>
       </Formik>

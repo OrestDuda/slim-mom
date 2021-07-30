@@ -1,11 +1,3 @@
-// import styles from "./LoginForm.module.scss";
-// import React from "react";
-
-// const LoginForm = () => {
-//     return(<h1>LOGIN FORM</h1>)
-// }
-
-// export default LoginForm
 
 import React, { useCallback } from 'react';
 import { Link } from 'react-router-dom';
@@ -18,9 +10,9 @@ import userOperations from '../../redux/user/userOperations';
 // import isLoading from '../';
 
 import FormCheck from '../FormCheck/FormCheck';
-import Button from '../BasicButton/BasicButton';
+//import Button from '../BasicButton/BasicButton';
 
-import styles from './LoginForm.module.css';
+import styles from './LoginForm.module.scss';
 
 const loginSchema = Yup.object().shape({
   email: Yup.string()
@@ -75,10 +67,10 @@ const LoginForm = () => {
           />
           <div className={styles.btnThumb}>
             {/* <Button disabled={loading}>Вход</Button> */}
-            <Button>Вход</Button>
-            <Link to="/registration" className={styles.regBtn}>
-              <Button view="btnReg">Регистрация</Button>
-            </Link>
+            {/*<Button>Вход</Button>*/}
+            {/*<Link to="/registration" className={styles.regBtn}>*/}
+            {/*  <Button view="btnReg">Регистрация</Button>*/}
+            {/*</Link>*/}
           </div>
         </Form>
       </Formik>
