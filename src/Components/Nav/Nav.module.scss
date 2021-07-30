@@ -1,0 +1,21 @@
+@import '../../index.scss';
+
+
+.nav__link{
+    text-decoration: none;
+    margin-right: 22px;
+
+    color: $secondary-text-color;
+
+    font-family: "Gotham Pro";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    transition: all 250ms ease;
+}
+
+.nav__link:hover{
+    color: black
+}
