@@ -1,4 +1,3 @@
-
 import React, { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +9,7 @@ import userOperations from '../../redux/user/userOperations';
 // import isLoading from '../';
 
 import FormCheck from '../FormCheck/FormCheck';
-//import Button from '../BasicButton/BasicButton';
+import Button from '../BasicButton/BasicButton';
 
 import styles from './LoginForm.module.scss';
 
@@ -67,7 +66,7 @@ const LoginForm = () => {
           />
           <div className={styles.btnThumb}>
             {/* <Button disabled={loading}>Вход</Button> */}
-            {/*<Button>Вход</Button>*/}
+            <Button>Вход</Button>
             {/*<Link to="/registration" className={styles.regBtn}>*/}
             {/*  <Button view="btnReg">Регистрация</Button>*/}
             {/*</Link>*/}

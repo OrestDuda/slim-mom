@@ -5,7 +5,8 @@ import userOperations from "../redux/user/userOperations";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Header from './Header/Header';
-import Container from './Container/Container';
+// import Container from './Container/Container';
+import RightSideBar from "../Components/RightSideBar/RightSideBar"
 
 const MainPage = lazy(() =>
   import("../Pages/MainPage/MainPage" /* webpackChunkName: "home" */)
@@ -24,7 +25,7 @@ const CalculatorPage = lazy(() =>
 );
 
 export default function App() {
-  //to check if loggedIn user
+
   // const dispatch = useDispatch();
   // useEffect(() => {
   //   dispatch(userOperations.getCurrentUser());
@@ -32,6 +33,7 @@ export default function App() {
 
     return (
         <>
+            <Header />
           <Suspense
             fallback={<Loader type="ThreeDots" color="#fc842d" height={130} width={130} style={{ textAlign: "center", }} />}
           >
@@ -44,6 +46,7 @@ export default function App() {
               <Redirect to="/" />
             </Switch>
           </Suspense>
+            <RightSideBar />
         </>
     );
 }

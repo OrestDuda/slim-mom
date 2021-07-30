@@ -13,7 +13,7 @@ html {
     background: #f0f1f3;
     margin: 0;
     margin-top: 73px;
-    margin-left: 110px;
+ //   margin-left: 110px;
     
   }
   .title {
@@ -61,7 +61,7 @@ html {
       justify-content: space-between;
       background: #f0f1f3;
       margin-top: 73.5px;
-      margin-left: 330px;
+    //  margin-left: 330px;
     }
     .summary {
       padding-top: 91px;
@@ -71,7 +71,7 @@ html {
     .menu {
       width: 270px;
       padding-top: 91px;
-      background-image: url('../../assets/images/tablet/leaves-sidebar-tablet-x1-min.png');
+      //background-image: url('../../assets/images/tablet/leaves-sidebar-tablet-x1-min.png');
     }
     .menutext {
       margin-bottom: 0px;
@@ -90,7 +90,7 @@ html {
     screen and (min-resolution: 192dpi) and (min-width: 768px),
     screen and (min-resolution: 2dppx) and (min-width: 768px) {
     .menu {
-      background-image: url('../../assets/images/tablet/leaves-sidebar-tablet-x2-v2-min.png');
+      //background-image: url('../../assets/images/tablet/leaves-sidebar-tablet-x2-v2-min.png');
     }
   }
   
@@ -99,7 +99,7 @@ html {
       width: 535px;
       padding: 141px 0 162px 90px;
       display: block;
-      background-image: url('../../assets/images/desktop/leaves-sidebar-desktop-x1-v2-min.png');
+     // background-image: url('../../assets/images/desktop/leaves-sidebar-desktop-x1-v2-min.png');
       background-position: 0px -135px;
       margin-left: auto;
       margin-top: -645px;
@@ -121,7 +121,7 @@ html {
     screen and (min-resolution: 192dpi) and (min-width: 1280px),
     screen and (min-resolution: 2dppx) and (min-width: 1280px) {
     .container {
-      background-image: url('../../assets/images/desktop/leaves-sidebar-desktop-x2-v2-min.png');
+     // background-image: url('../../assets/images/desktop/leaves-sidebar-desktop-x2-v2-min.png');
       background-position: 0px -135px;
     }
   }
