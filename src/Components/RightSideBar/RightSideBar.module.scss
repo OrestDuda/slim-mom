@@ -1,0 +1,127 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  .container {
+    width: 320px;
+    padding: 40px 15px 24px 15px;
+    background: #f0f1f3;
+    margin: 0;
+    margin-top: 73px;
+    margin-left: 110px;
+    
+  }
+  .title {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.21;
+    letter-spacing: 0.04em;
+    margin: 0 0 20px;
+  }
+  .text {
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.21;
+    letter-spacing: 0.04em;
+    color: #9b9faa;
+    line-height: 2;
+    margin: 0;
+  }
+  
+  .menutext {
+    margin-bottom: 60px;
+    width: 270px;
+    height: 200px;
+  }
+  .statistics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .listName {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    margin: 0px;
+    text-align: left;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .container {
+      width: 768px;
+      padding: 0 99px 0px 87px;
+      display: flex;
+      justify-content: space-between;
+      background: #f0f1f3;
+      margin-top: 73.5px;
+      margin-left: 330px;
+    }
+    .summary {
+      padding-top: 91px;
+      width: 252px;
+      margin-bottom: 91px;
+    }
+    .menu {
+      width: 270px;
+      padding-top: 91px;
+      background-image: url('../../assets/images/tablet/leaves-sidebar-tablet-x1-min.png');
+    }
+    .menutext {
+      margin-bottom: 0px;
+    }
+    .statistics {
+      margin: 0px;
+    }
+    .title {
+      margin: 0 0 39px;
+    }
+    .products {
+      height: 112px;
+    }
+  }
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+    screen and (min-resolution: 192dpi) and (min-width: 768px),
+    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    .menu {
+      background-image: url('../../assets/images/tablet/leaves-sidebar-tablet-x2-v2-min.png');
+    }
+  }
+  
+  @media screen and (min-width: 1280px) {
+    .container {
+      width: 535px;
+      padding: 141px 0 162px 90px;
+      display: block;
+      background-image: url('../../assets/images/desktop/leaves-sidebar-desktop-x1-v2-min.png');
+      background-position: 0px -135px;
+      margin-left: auto;
+      margin-top: -645px;
+    }
+    .summary {
+      padding-top: 0;
+      margin-bottom: 60px;
+      height: 168px;
+    }
+    .menu {
+      padding-top: 0;
+      height: 168px;
+    }
+    .title {
+      margin: 0 0 25px;
+    }
+  }
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 1280px),
+    screen and (min-resolution: 192dpi) and (min-width: 1280px),
+    screen and (min-resolution: 2dppx) and (min-width: 1280px) {
+    .container {
+      background-image: url('../../assets/images/desktop/leaves-sidebar-desktop-x2-v2-min.png');
+      background-position: 0px -135px;
+    }
+  }
