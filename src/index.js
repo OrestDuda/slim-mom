@@ -6,15 +6,19 @@ import App from './Components/App';
 import './services/baseURL';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from "react-router-dom";
+
 import store from './redux/store';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store.store}>
-      <PersistGate loading={null} persistor={store.persistor}>
-        <App />
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <React.StrictMode>
+      <Provider store={store.store}>
+        <PersistGate loading={null} persistor={store.persistor}>
+          <App />
+        </PersistGate>
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>,
   document.getElementById('root'),
 );
