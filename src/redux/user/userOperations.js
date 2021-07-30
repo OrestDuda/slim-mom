@@ -37,14 +37,15 @@ const token = {
   },
 };
 
-const register = (email, name, password) => async dispatch => {
+const register = ({email, name, password}) => async dispatch => {
   const userInfo = { email, name, password };
 
   dispatch(registerRequest());
 
   try {
     const response = await axios.post('/users/registration', userInfo);
-    token.set(response.data.token);
+    console.dir(response.data.user.token)
+    token.set(response.data.user.token);
     dispatch(registerSuccess(response.data));
   } catch (error) {
     notify(error.message);
@@ -80,10 +81,12 @@ const logOut = () => async dispatch => {
 
 const getCurrentUser = () => async (dispatch, getState) => {
   //Забираем токен из localStorage через getState()
-  const {
-    userInfo: { token: persistedTokenOfLoggedUser },
-  } = getState();
+  // const {
+  //   userInfo: { token: persistedTokenOfLoggedUser },
+  // } = getState();
 
+  //local storage to fix
+  const persistedTokenOfLoggedUser = getState().user.token;
   if (!persistedTokenOfLoggedUser) {
     return;
   }

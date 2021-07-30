@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import userOperations from "../redux/user/userOperations";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import PublicRoute from "../Components/PublicRoute/PublicRoute";
 import Header from './Header/Header';
-// import Container from './Container/Container';
-import RightSideBar from "../Components/RightSideBar/RightSideBar"
 
 const MainPage = lazy(() =>
   import("../Pages/MainPage/MainPage" /* webpackChunkName: "home" */)
@@ -26,10 +26,10 @@ const CalculatorPage = lazy(() =>
 
 export default function App() {
 
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(userOperations.getCurrentUser());
-  // }, [dispatch]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(userOperations.getCurrentUser());
+  }, [dispatch]);
 
     return (
         <>
@@ -44,9 +44,24 @@ export default function App() {
               <Route path="/dairy"  component={DairyPage} />
               <Route path="/calculator"  component={CalculatorPage} />
               <Redirect to="/" />
+
+                {/*<PublicRoute path="/" exact>*/}
+                {/*    <MainPage />*/}
+                {/*</PublicRoute>*/}
+                {/*<PublicRoute path="/registration" restricted redirectTo="/calculator">*/}
+                {/*    <RegistrationPage />*/}
+                {/*</PublicRoute>*/}
+                {/*<PublicRoute path="/login" restricted redirectTo="/calculator">*/}
+                {/*    <LoginPage />*/}
+                {/*</PublicRoute>*/}
+                {/*<PrivateRoute path="/calculator" redirectTo="/login">*/}
+                {/*    <CalculatorPage />*/}
+                {/*</PrivateRoute>*/}
+                {/*<PrivateRoute path="/dairy" redirectTo="/login">*/}
+                {/*    <DairyPage />*/}
+                {/*</PrivateRoute>*/}
             </Switch>
           </Suspense>
-            <RightSideBar />
         </>
     );
 }

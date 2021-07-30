@@ -19,7 +19,7 @@ const {
   publicUserCalculateError,
 } = userActions;
 
-const initialUser = { name: null, email: null, password: null };
+const initialUser = { name: null, email: null };
 const userParameters = {
   height: '',
   age: '',
@@ -42,7 +42,7 @@ const user = createReducer(initialUser, {
 
 const token = createReducer(null, {
   [registerSuccess]: (_, { payload }) => payload.token,
-  [loginSuccess]: (_, { payload }) => payload.token,
+  [loginSuccess]: (_, { payload }) => payload.user.token,
   [logoutSuccess]: () => null,
 });
 
