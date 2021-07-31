@@ -14,8 +14,6 @@ export default function Header () {
       <header >
         <Logo />
         <span className={styles.slash}/>
-        <Nav/>
-        <span className={styles.slash}/>
           {userLoggedIn ? <UserNav /> : <Nav />}
           {userLoggedIn && <UserInfo />}
       </header>

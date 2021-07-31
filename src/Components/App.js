@@ -39,13 +39,6 @@ export default function App() {
             fallback={<Loader />}
           >
             <Switch>
-              {/*<Route path="/" exact component={MainPage} />*/}
-              {/*<Route path="/registration" component={RegistrationPage} />*/}
-              {/*<Route path="/login" component={LoginPage} />*/}
-              {/*<Route path="/dairy"  component={DairyPage} />*/}
-              {/*<Route path="/calculator"  component={CalculatorPage} />*/}
-              {/*<Redirect to="/" />*/}
-
                 <PublicRoute path="/" exact restricted redirectTo="/calculator">
                     <MainPage />
                 </PublicRoute>
