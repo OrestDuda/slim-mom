@@ -5,7 +5,7 @@ import logo from '../../bcgimages/logo.svg'
 
 const Logo = () => {
   return (
-    <a href='/login' className={styles.logo}>
+    <a href='/' className={styles.logo}>
       <img src={logo} alt="logo" />
       <div className={styles.logo__text}>
         <span className={styles.logo__slim}>Slim</span>

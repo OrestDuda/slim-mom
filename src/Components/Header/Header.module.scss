@@ -1,6 +1,19 @@
 header{
     display: flex;
     align-items: center;
+    position: relative;
+    border-bottom: none;
+    @media screen and (min-width: 320px) {
+        flex-wrap: wrap;
+    }
+    @media screen and (min-width: 768px) {
+        border-bottom: 2px solid #E0E0E0;
+        flex-wrap: nowrap;
+    }
+    @media screen and (min-width: 1280px) {
+        border-bottom: none;
+        flex-wrap: nowrap;
+    }
 }
 
 .slash{

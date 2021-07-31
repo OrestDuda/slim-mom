@@ -1,0 +1,126 @@
+@import '../../index';
+.nav__link_auth{
+  text-decoration: none;
+  margin-right: 22px;
+  color: $secondary-text-color;
+  font-family: "Gotham Pro";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 13px;
+  letter-spacing: 0.04em;
+  transition: all 250ms ease;
+}
+.nav__link_auth:hover{
+  color: black
+}
+.nav__link__active_auth{
+  color: black;
+}
+
+///userlinks
+
+.nav__link{
+    text-decoration: none;
+    margin-right: 22px;
+    color: $secondary-text-color;
+    font-family: "Gotham Pro";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    transition: all 250ms ease;
+  @media screen and (min-width: 320px) {
+    display: block;
+    font-size: 24px;
+    line-height: 22px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  @media screen and (min-width: 768px) {
+    display: block;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  @media screen and (min-width: 1280px) {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 22px;
+    color: $secondary-text-color;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    transition: all 250ms ease;
+    margin-bottom: 0px;
+  }
+}
+
+.nav__link:hover{
+  color: white;
+  @media screen and (min-width: 1280px) {
+    color: black;
+  }
+}
+.nav__link__active{
+    color: white;
+    @media screen and (min-width: 1280px) {
+      color: black;
+    }
+}
+
+////hamburger
+
+.navBar{
+  @media screen and (min-width: 320px) {
+   order: 0;
+    margin-left: auto;
+    margin-right: 18px;
+  }
+  @media screen and (min-width: 768px) {
+    order: 3;
+    margin-right: 90px;
+    margin-left: 0px;
+  }
+  @media screen and (min-width: 1280px) {
+    order: 0;
+    margin-right: 0px;
+  }
+}
+.navBar button {
+    cursor: pointer;
+  @media screen and (min-width: 320px) {
+    display: inline-block;
+  }
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+}
+
+.Menu{
+  @media screen and (max-width: 1279px) {
+    display: none;
+  }
+  &.showMenu{
+    position: absolute;
+    top: 107px;
+    background: #264061;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    z-index: 9;
+    display: block;
+    @media screen and (min-width: 320px) {
+      padding-top: 60px;
+    }
+    @media screen and (min-width: 768px) {
+      padding-top: 106px;
+    }
+  }
+}
