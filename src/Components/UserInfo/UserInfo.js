@@ -1,31 +1,26 @@
 import styles from "./UserInfo.module.scss";
-//import { connect } from 'react-redux';
 import React from 'react';
+import userSelectors from '../../redux/user/userSelectors';
+import userOperations from "../../redux/user/userOperations";
+import {useSelector, useDispatch} from "react-redux";
 
-import verticalLine from '../../Images/images/vertical-line.png';
-//import { authOperations, authSelectors } from '../../redux/auth';
 
-const UserInfo = ({ name, onLogout }) => (
-  <div className={styles.userBox}>
-    <div className={styles.userInfo}>
-      <span className={styles.name}>{name}</span>
-      <img
-        className={styles.verticalLine}
-        src={verticalLine}
-        alt="vertical-line"
-        width="2"
-        height="32"
-      />
-      <button type="button" className={styles.logout} onClick={onLogout}>
-        Выйти
-      </button>
-    </div>
-  </div>
-);
+export default function UserInfo(){
+    const user = useSelector(userSelectors.getUser);
+    const dispatch = useDispatch();
+    const userName = user.name;
+    return(
+        <div className={styles.userBox}>
+            <div className={styles.userInfo}>
+                <span className={styles.name}>{userName}</span>
+                <span className={styles.slash}/>
+                <button type="button" className={styles.logout}  onClick={() => dispatch(userOperations.logOut())}>
+                    Выйти
+                </button>
+            </div>
+        </div>
+    )
+}
 
-//const mapStateToProps = state => ({
-// name: authSelectors.getUserName(state),
-//});
 
-export default //connect(mapStateToProps, { onLogout: authOperations.logOut })
-(UserInfo);
+

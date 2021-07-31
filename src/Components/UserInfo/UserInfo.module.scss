@@ -6,7 +6,16 @@
     padding: 0 15px;
     margin: 0 auto;
     background-color: #eff1f3;
+    z-index: 10;
+  @media screen and (min-width: 320px) {
+    border-top: 2px solid #E0E0E0;
+    flex-basis: 100%;
   }
+  @media screen and (min-width: 768px) {
+    border-top: none;
+    flex-basis: auto;
+  }
+}
   .userInfo {
     display: flex;
     width: 290px;
@@ -34,10 +43,11 @@
     cursor: pointer;
     margin: 0;
     padding: 0;
+    &:hover{
+      color: black;
+    }
   }
-  .verticalLine{
-    margin-right: 15px;
-  }
+
   @media screen and (min-width: 768px) {
     .userBox {
       padding: 0;
@@ -55,7 +65,10 @@
     .name {
       margin-right: 22px;
     }
-    .verticalLine{
-      margin-right: 22px;
-    }
   }
+.slash{
+  width: 2px;
+  height: 32px;
+  background-color: #E0E0E0;
+  margin: 0 22px 0 22px;
+}
