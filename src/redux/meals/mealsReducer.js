@@ -12,13 +12,21 @@ const {
   deleteFoodFromMealsRequest,
   deleteFoodFromMealsSuccess,
   deleteFoodFromMealsError,
+  changeDate,
 } = mealsActions;
 const initialMeals = { onDay: null, food: [] };
 const meals = createReducer(initialMeals, {
-  [fetchMealsByDaySuccess]: (_, { payload }) => payload.dayJournal,
+  [fetchMealsByDaySuccess]: (_, { payload }) => payload,
   [addFoodToMealsSuccess]: (state, { payload }) => [...state, payload],
   [deleteFoodFromMealsSuccess]: (state, actions) =>
     state.filter(({ foodId }) => foodId !== actions.payload),
+});
+const date = new Date();
+const jsonData = date.toJSON();
+const formatData = jsonData.slice(0, 10);
+
+const setDate = createReducer(formatData, {
+  [changeDate]: (_, { payload }) => payload,
 });
 
 const setError = (_, { payload }) => payload;
@@ -45,4 +53,5 @@ export default combineReducers({
   meals,
   error,
   loading,
+  setDate,
 });
