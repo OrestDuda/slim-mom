@@ -16,6 +16,8 @@ const deleteFoodFromMealsSuccess = createAction(
 );
 const deleteFoodFromMealsError = createAction('meals/deleteFoodFromMealsError');
 
+const changeDate = createAction('meals/changeDate');
+
 const mealsActions = {
   addFoodToMealsRequest,
   addFoodToMealsSuccess,
@@ -26,6 +28,7 @@ const mealsActions = {
   deleteFoodFromMealsRequest,
   deleteFoodFromMealsSuccess,
   deleteFoodFromMealsError,
+  changeDate,
 };
 
 export default mealsActions;
