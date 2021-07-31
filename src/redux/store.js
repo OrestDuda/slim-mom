@@ -23,21 +23,22 @@ const middleware = [
   // logger,
 ];
 
-// const authenticationPersistConfig = {
-//   key: "authentication",
-//   storage,
-//   whitelist: ["token"],
-// };
-
-const userPersistConfig = {
-  key: 'userInfo',
+//local storage to fix
+const authenticationPersistConfig = {
+  key: "authentication",
   storage,
+  whitelist: ["token"],
 };
+
+// const userPersistConfig = {
+//   key: 'userInfo',
+//   storage,
+// };
 
 const store = configureStore({
   reducer: {
     meals: mealsReducer,
-    user: persistReducer(userPersistConfig, userReducer),
+    user: persistReducer(authenticationPersistConfig, userReducer),
     food: foodReducer,
   },
   middleware,

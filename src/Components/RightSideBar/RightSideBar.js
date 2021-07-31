@@ -1,16 +1,32 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import userOperations from "../../redux/user/userOperations";
+import mealsOperations from "../../redux/meals/mealsOperations";
 import styles from './RightSideBar.module.scss';
 import userSelectors from "../../redux/user/userSelectors";
+import mealsSelectors from "../../redux/meals/mealsSelectors";
 
 export default function RightSideBar (){
-  // const currentUser = useSelector(userSelectors.getUser)
-  // const notRecommended = useSelector(userSelectors.getUserNotRecommendedFood);
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(userOperations.getCurrentUser());
-  // }, [dispatch]);
+  const dailyLimit = useSelector(userSelectors.getUserDailyLimit)
+  const notRecommended = useSelector(userSelectors.getUserNotRecommendedFood);
+
+//check when dairy/calculator are done
+//
+//
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(mealsOperations.getMealsByDay("2021-07-31"));
+  }, [dispatch]);
+  const mealsOnDay = useSelector(mealsSelectors.getFood);
+
+  let sumKcal = 0;
+  const mealsKkal = mealsOnDay.map(item=> {
+  Number(item.kcal);
+  sumKcal += item.kcal
+  })
+  const leftForDay = dailyLimit - sumKcal;
+  const percentConsumed = (sumKcal*100)/dailyLimit;
+  const notRecommendedFormatted = notRecommended.map(item=> item.charAt(0).toUpperCase() + item.slice(1));
+  const notRecommendedFormattedString = notRecommendedFormatted.join(", ")
 
   return (
     <div className={styles.container}>
@@ -20,19 +36,25 @@ export default function RightSideBar (){
             <ul className={styles.listName}>
             <li className={styles.text}>
             <span className={styles.text}>Осталось</span>
-            <span className={styles.text}>000 ккал</span>
+            <span className={styles.text}>
+              {dailyLimit? `${leftForDay} ккал`: "000 ккал"}
+            </span>
           </li>
           <li className={styles.text}>
             <span className={styles.text}>Употреблено</span>
-            <span className={styles.text}>000 ккал</span>
+            <span className={styles.text}>
+              {mealsOnDay.length === 0? "000 ккал": `${sumKcal} ккал`}
+            </span>
           </li>
           <li className={styles.text}>
             <span className={styles.text}>Дневная норма</span>
-            <span className={styles.text}>000 ккал</span>
+            <span className={styles.text}>
+                {dailyLimit? `${dailyLimit} ккал`: "000 ккал"}
+            </span>
           </li>
           <li className={styles.text}>
             <span className={styles.text}>n% от нормы</span>
-            <span className={styles.text}>000 ккал</span>
+            {dailyLimit? `${percentConsumed.toFixed(0)} %`: "000 ккал"}
           </li>
             </ul>
             
@@ -41,7 +63,7 @@ export default function RightSideBar (){
         <div className={styles.menu}>
           <h2 className={styles.title}>Нерекомендуемые продукты</h2>
           <span className={styles.text}>
-
+            {notRecommended.length === 0? "Здесь будет отображаться Ваш рацион": notRecommendedFormattedString}
         </span>
         </div>
       </div>
