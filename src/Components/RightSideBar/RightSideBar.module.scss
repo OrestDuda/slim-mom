@@ -8,12 +8,12 @@ html {
     box-sizing: inherit;
   }
   .container {
-    width: 320px;
+    //width: 320px;
     padding: 40px 15px 24px 15px;
     background: #f0f1f3;
-    margin: 0;
-    margin-top: 73px;
- //   margin-left: 110px;
+    //margin: 0;
+    //margin-top: 73px;
+    //margin-left: 110px;
     
   }
   .title {
@@ -55,12 +55,12 @@ html {
   
   @media screen and (min-width: 768px) {
     .container {
-      width: 768px;
+      width: 100%;
       padding: 0 99px 0px 87px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       background: #f0f1f3;
-      margin-top: 73.5px;
+      //margin-top: 73.5px;
     //  margin-left: 330px;
     }
     .summary {
@@ -101,8 +101,11 @@ html {
       display: block;
      // background-image: url('../../assets/images/desktop/leaves-sidebar-desktop-x1-v2-min.png');
       background-position: 0px -135px;
-      margin-left: auto;
-      margin-top: -645px;
+      right: 0;
+      top: 0;
+      position: absolute;
+      height: 100%;
+      //margin-top: -645px;
     }
     .summary {
       padding-top: 0;

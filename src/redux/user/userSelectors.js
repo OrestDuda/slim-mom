@@ -4,8 +4,8 @@ const getUser = state => state.user.user;
 
 const getUserId = state => state.user.user._id;
 
-const getUserNotRecommendedFood = state => state.user.user.currentUser.notRecommended;
-const getUserDailyLimit = state => state.user.user.currentUser.dailyLimit;
+const getUserNotRecommendedFood = state => state.user.user.notRecommended;
+const getUserDailyLimit = state => state.user.user.dailyLimit;
 
 const getPublicUser = state => state.user.publicUser;
 
