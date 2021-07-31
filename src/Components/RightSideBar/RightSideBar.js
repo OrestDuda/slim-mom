@@ -4,6 +4,7 @@ import mealsOperations from "../../redux/meals/mealsOperations";
 import styles from './RightSideBar.module.scss';
 import userSelectors from "../../redux/user/userSelectors";
 import mealsSelectors from "../../redux/meals/mealsSelectors";
+import userOperations from "../../redux/user/userOperations";
 
 export default function RightSideBar (){
   const dailyLimit = useSelector(userSelectors.getUserDailyLimit)
@@ -12,10 +13,15 @@ export default function RightSideBar (){
 //check when dairy/calculator are done
 //
 //
+//   useEffect(() => {
+//     dispatch(userOperations.getCurrentUser());
+//   }, [dispatch]);
+//
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(mealsOperations.getMealsByDay("2021-07-31"));
   }, [dispatch]);
+
   const mealsOnDay = useSelector(mealsSelectors.getFood);
 
   let sumKcal = 0;
