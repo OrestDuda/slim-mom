@@ -9,7 +9,7 @@ const Header = () => {
     <div className={styles.container}>
       <header >
         <Logo />
-        <span className={styles.slash}></span>
+        <span className={styles.slash}/>
         <Nav/>
       </header>
     </div>

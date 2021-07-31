@@ -51,6 +51,7 @@
   "devDependencies": {
     "eslint": "^7.31.0",
     "formik": "^2.2.9",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "react-datepicker": "^4.1.1"
   }
 }
