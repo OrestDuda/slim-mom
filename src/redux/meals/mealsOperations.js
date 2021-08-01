@@ -16,11 +16,12 @@ const {
   deleteFoodFromMealsError,
 } = mealsActions;
 
-const getMealsByDay = mealsDate => async dispatch => {
+const getMealsByDay = () => async (dispatch, getState) => {
+  const mealsDate = getState().meals.setDate;
   dispatch(fetchMealsByDayRequest());
   try {
-    const { data } = await axios.get(`/journal/${mealsDate}`);
-    dispatch(fetchMealsByDaySuccess(data));
+    const response = await axios.get(`/journal/${mealsDate}`);
+    dispatch(fetchMealsByDaySuccess(response.data));
   } catch (error) {
     notify(error.message);
     dispatch(fetchMealsByDayError(error));
@@ -29,7 +30,6 @@ const getMealsByDay = mealsDate => async dispatch => {
 
 const addFoodToMeals = (foodItem, portionSize, onDay) => async dispatch => {
   const foodToAdd = { foodItem, portionSize, onDay };
-
   dispatch(addFoodToMealsRequest());
   try {
     const { data } = await axios.post(`/journal`, foodToAdd);
@@ -40,8 +40,8 @@ const addFoodToMeals = (foodItem, portionSize, onDay) => async dispatch => {
   }
 };
 
-const deleteFoodFromMeals = foodId => async dispatch => {
-  const mealsDate = useSelector(mealsSelectors.getMealsDate);
+const deleteFoodFromMeals = foodId => async (dispatch, getState) => {
+  const mealsDate = getState().meals.setDate;
   dispatch(deleteFoodFromMealsRequest());
   try {
     await axios.delete(`/journal/${mealsDate}/${foodId}`);

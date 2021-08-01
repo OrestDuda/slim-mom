@@ -18,8 +18,8 @@ const DiaryPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(mealsOperations.getMealsByDay(date));
-  }, [dispatch, date]);
+    dispatch(mealsOperations.getMealsByDay());
+  }, [date]);
 
   useEffect(() => {
     setWidth(document.documentElement.clientWidth);

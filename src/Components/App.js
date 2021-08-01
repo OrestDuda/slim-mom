@@ -37,30 +37,38 @@ export default function App() {
   }, [dispatch]);
   const userLoggedIn = useSelector(userSelectors.getIfLoggedIn);
 
-  return (
-    <>
-      <Header />
-      <Modal />
-      <Suspense fallback={<Loader />}>
-        <Switch>
-          <PublicRoute path="/" exact restricted redirectTo="/calculator">
-            <MainPage />
-          </PublicRoute>
-          <PublicRoute path="/registration" restricted redirectTo="/calculator">
-            <RegistrationPage />
-          </PublicRoute>
-          <PublicRoute path="/login" restricted redirectTo="/calculator">
-            <LoginPage />
-          </PublicRoute>
-          <PrivateRoute path="/calculator" redirectTo="/login">
-            <CalculatorPage />
-          </PrivateRoute>
-          <PrivateRoute path="/dairy" redirectTo="/login">
-            <DairyPage />
-          </PrivateRoute>
-        </Switch>
-      </Suspense>
-      {userLoggedIn && <RightSideBar />}
-    </>
-  );
+    return (
+        <>
+            <Header />
+          <Suspense
+            fallback={<Loader />}
+          >
+            <Switch>
+              {/*<Route path="/" exact component={MainPage} />*/}
+              {/*<Route path="/registration" component={RegistrationPage} />*/}
+              {/*<Route path="/login" component={LoginPage} />*/}
+              {/*<Route path="/dairy"  component={DairyPage} />*/}
+              {/*<Route path="/calculator"  component={CalculatorPage} />*/}
+              {/*<Redirect to="/" />*/}
+
+                <PublicRoute path="/" exact restricted redirectTo="/calculator">
+                    <MainPage />
+                </PublicRoute>
+                <PublicRoute path="/registration" restricted redirectTo="/calculator">
+                    <RegistrationPage />
+                </PublicRoute>
+                <PublicRoute path="/login" restricted redirectTo="/calculator">
+                    <LoginPage />
+                </PublicRoute>
+                <PrivateRoute path="/calculator" redirectTo="/login">
+                    <CalculatorPage />
+                </PrivateRoute>
+                <PrivateRoute path="/dairy" redirectTo="/login">
+                    <DairyPage />
+                </PrivateRoute>
+            </Switch>
+          </Suspense>
+            {userLoggedIn && <RightSideBar/>}
+        </>
+    );
 }
