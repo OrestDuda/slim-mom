@@ -131,11 +131,11 @@ const calculateLoggedInUser =
   (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
     //Посчитать залогиненого юзера , возвращает всю инфо по юзеру. входные данные (рост,возраст,текущий вес, желаемый вес, тип крови)=параметры передавать отдельно а не одним обьектом
     const userParameters = {
-      height,
-      age,
-      currentWeight,
-      desiredWeight,
-      bloodType,
+      currentWeight: Number.parseInt(currentWeight),
+      height: Number.parseInt(height),
+      age: Number.parseInt(age),
+      desiredWeight: Number.parseInt(desiredWeight),
+      bloodType: Number.parseInt(bloodType),
     };
 
     dispatch(calculateUserRequest());
@@ -152,13 +152,13 @@ const publicUserCalculate =
   (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
     //Посчитать публичного юзера , возвращает только кол-во  калорий и нерекомендуемую еду. входные данные (рост,возраст,текущий вес, желаемый вес, тип крови)=параметры передавать отдельно а не одним обьектом
     const userParameters = {
-      height,
-      age,
-      currentWeight,
-      desiredWeight,
-      bloodType,
+      currentWeight: Number.parseInt(currentWeight),
+      height: Number.parseInt(height),
+      age: Number.parseInt(age),
+      desiredWeight: Number.parseInt(desiredWeight),
+      bloodType: Number.parseInt(bloodType),
     };
-
+    console.log(userParameters);
     dispatch(publicUserCalculateRequest());
     try {
       const { data } = await axios.patch(`/public`, userParameters);
