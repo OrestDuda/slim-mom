@@ -24,7 +24,7 @@ const getMealsByDay = mealsDate => async dispatch => {
     dispatch(fetchMealsByDaySuccess(data));
   } catch (error) {
     notify(error.message);
-    dispatch(fetchMealsByDayError(error));
+    dispatch(fetchMealsByDayError(error.message));
   }
 };
 
@@ -38,7 +38,7 @@ const addFoodToMeals = (foodItem, portionSize, onDay) => async dispatch => {
     dispatch(addFoodToMealsSuccess(data));
   } catch (error) {
     notify(error.message);
-    dispatch(addFoodToMealsError(error));
+    dispatch(addFoodToMealsError(error.message));
   }
 };
 
@@ -51,7 +51,7 @@ const deleteFoodFromMeals = foodId => async dispatch => {
     dispatch(deleteFoodFromMealsSuccess(foodId));
   } catch (error) {
     notify(error.message);
-    dispatch(deleteFoodFromMealsError(error));
+    dispatch(deleteFoodFromMealsError(error.message));
   }
 };
 

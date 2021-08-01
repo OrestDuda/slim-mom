@@ -4,13 +4,13 @@ import Header from './Header/Header';
 import CalculatorCalorieForm from '../Components/CalculatorCalorieForm';
 
 function App() {
-    return (
-        <>
-            <Header/>
-            <section>
-                <CalculatorCalorieForm />
-            </section>
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <section>
+        <CalculatorCalorieForm />
+      </section>
+    </>
+  );
 }
 export default App;

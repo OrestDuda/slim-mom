@@ -123,7 +123,7 @@ const saveUserParameters =
       dispatch(addUserInfoSuccess());
     } catch (error) {
       notify(error.message);
-      dispatch(addUserInfoError(error));
+      dispatch(addUserInfoError(error.message));
     }
   };
 
@@ -144,7 +144,7 @@ const calculateLoggedInUser =
       dispatch(calculateUserSuccess(data));
     } catch (error) {
       notify(error.message);
-      dispatch(calculateUserError(error));
+      dispatch(calculateUserError(error.message));
     }
   };
 
@@ -165,7 +165,7 @@ const publicUserCalculate =
       dispatch(publicUserCalculateSuccess(data));
     } catch (error) {
       notify(error.message);
-      dispatch(publicUserCalculateError(error));
+      dispatch(publicUserCalculateError(error.message));
     }
   };
 

@@ -19,7 +19,7 @@ const getFood = () => async dispatch => {
     dispatch(fetchFoodSuccess(data));
   } catch (error) {
     notify(error.message);
-    dispatch(fetchFoodError(error));
+    dispatch(fetchFoodError(error.message));
   }
 };
 
@@ -31,7 +31,7 @@ const getFoodByQuery = query => async dispatch => {
     dispatch(fetchFoodByQuerySuccess(data));
   } catch (error) {
     notify(error.message);
-    dispatch(fetchFoodByQueryError(error));
+    dispatch(fetchFoodByQueryError(error.message));
   }
 };
 
