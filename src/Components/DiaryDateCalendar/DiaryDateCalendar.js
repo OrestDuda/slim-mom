@@ -20,7 +20,7 @@ const DiaryDateCalendar = () => {
     <div className={styles.date}>
       <DatePicker
         className={styles.calendar}
-        dateFormat="YYYY-MM-DD"
+        dateFormat="dd-MM-yyyy"
         selected={startDate}
         onChange={date => onChange(date)}
       />

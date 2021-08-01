@@ -1,35 +1,29 @@
-import React, { useEffect } from "react"
-import { createPortal } from "react-dom"
-import "./Modal.scss"
+import React from 'react';
+import styles from './Modal.module.scss';
 
-const modalRoot = document.querySelector("#modal-root")
-
-export default function Modal({ onClose, children }) {
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.code === "Escape") {
-        onClose()
-      }
-    }
-//say hello
-    window.addEventListener("keydown", handleKeyDown)
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown)
-    }
-  }, [onClose])
-
-  const handleBackdropClick = (event) => {
-    if (event.currentTarget === event.target) {
-      onClose()
-    }
+export default class Modal extends React.Component {
+  state = {
+    isOpen: false,
+  };
+  render() {
+    return (
+      <React.Fragment>
+        {this.state.isOpen && (
+          <div className={styles.backdrop}>
+            <div className={styles.content}>
+              <h1>Title</h1>
+              <p>Text</p>
+              <button
+                onClick={() => {
+                  this.setState({ isOpen: false });
+                }}
+              >
+                Close Modal
+              </button>
+            </div>
+          </div>
+        )}
+      </React.Fragment>
+    );
   }
-
-  return createPortal(
-    <div className='Modal__backdrop' onClick={handleBackdropClick}>
-      <div className='Modal__content'>{children}</div>
-    </div>,
-    modalRoot
-  )
 }
-
