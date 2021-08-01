@@ -30,7 +30,11 @@ const getMealsByDay = mealsDate => async dispatch => {
 
 const addFoodToMeals = (foodItem, portionSize, onDay) => async dispatch => {
   // добавить еду к блюдам . входные данные (еду, порция, день)
-  const foodToAdd = { foodItem, portionSize, onDay };
+  const foodToAdd = {
+    foodItem,
+    portionSize: Number.parseInt(portionSize),
+    onDay,
+  };
 
   dispatch(addFoodToMealsRequest());
   try {
