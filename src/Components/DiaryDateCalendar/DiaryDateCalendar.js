@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
@@ -11,6 +12,24 @@ import style from './DiaryDateCalendar.module.css';
 class DiaryDateCalendar extends Component {
   state = {
     date: '',
+=======
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import DatePicker from 'react-datepicker';
+import mealsActions from '../../redux/meals/mealsActions';
+import styles from './DiaryDateCalendar.module.scss';
+import 'react-datepicker/dist/react-datepicker.css';
+
+const DiaryDateCalendar = () => {
+  const [startDate, setStartDate] = useState(new Date());
+  const dispatch = useDispatch();
+
+  const onChange = date => {
+    const jsonData = date.toJSON();
+    const formatData = jsonData.slice(0, 10);
+    dispatch(mealsActions.changeDate(formatData));
+    setStartDate(date);
+>>>>>>> Stashed changes
   };
 
   componentDidMount() {

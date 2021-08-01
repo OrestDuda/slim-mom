@@ -15,10 +15,25 @@ const {
 } = mealsActions;
 const initialMeals = { onDay: null, food: [] };
 const meals = createReducer(initialMeals, {
+<<<<<<< Updated upstream
   [fetchMealsByDaySuccess]: (_, { payload }) => payload.dayJournal,
   [addFoodToMealsSuccess]: (state, { payload }) => [...state, payload],
   [deleteFoodFromMealsSuccess]: (state, actions) =>
     state.filter(({ foodId }) => foodId !== actions.payload),
+=======
+  [fetchMealsByDaySuccess]: (state, { payload }) => {
+    return { ...state, ...payload.dayJournal };
+  },
+  [addFoodToMealsSuccess]: (state, { payload }) => {
+    return { ...state, ...payload.dayJournal };
+  },
+  [deleteFoodFromMealsSuccess]: (state, action) => {
+    return {
+      ...state,
+      food: state.food.filter(({ _id }) => _id !== action.payload),
+    };
+  },
+>>>>>>> Stashed changes
 });
 
 const setError = (_, { payload }) => payload;

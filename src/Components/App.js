@@ -32,6 +32,7 @@ export default function App() {
   }, [dispatch]);
     const userLoggedIn = useSelector(userSelectors.getIfLoggedIn)
 
+<<<<<<< Updated upstream
     return (
         <>
             <Header />
@@ -66,4 +67,32 @@ export default function App() {
             {userLoggedIn && <RightSideBar/>}
         </>
     );
+=======
+  return (
+    <>
+      <Header />
+      <Modal />
+      <Suspense fallback={<Loader />}>
+        <Switch>
+          <PublicRoute path="/" exact restricted redirectTo="/calculator">
+            <MainPage />
+          </PublicRoute>
+          <PublicRoute path="/registration" restricted redirectTo="/calculator">
+            <RegistrationPage />
+          </PublicRoute>
+          <PublicRoute path="/login" restricted redirectTo="/dairy">
+            <LoginPage />
+          </PublicRoute>
+          <PrivateRoute path="/calculator" redirectTo="/login">
+            <CalculatorPage />
+          </PrivateRoute>
+          <PrivateRoute path="/dairy" redirectTo="/login">
+            <DairyPage />
+          </PrivateRoute>
+        </Switch>
+      </Suspense>
+      {userLoggedIn && <RightSideBar />}
+    </>
+  );
+>>>>>>> Stashed changes
 }

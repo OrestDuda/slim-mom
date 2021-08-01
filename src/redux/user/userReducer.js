@@ -19,7 +19,15 @@ const {
   publicUserCalculateError,
 } = userActions;
 
-const initialUser = { name: null, email: null, height: null, age: null, currentWeight: null, desiredWeight: null, bloodType: null};
+const initialUser = {
+  name: null,
+  email: null,
+  height: null,
+  age: null,
+  currentWeight: null,
+  desiredWeight: null,
+  bloodType: null,
+};
 const userParameters = {
   height: '',
   age: '',
@@ -32,16 +40,20 @@ const publicUser = createReducer(userParameters, {
 });
 
 const user = createReducer(initialUser, {
-  // [registerSuccess]: (_, actions) => actions.payload.user,
-  [registerSuccess]: (state, { payload }) => {return{...state, ...payload.user}},
-  // [loginSuccess]: (_, { payload }) => payload.user,
-  [loginSuccess]: (state, { payload }) => {return{...state, ...payload.user}},
+  [registerSuccess]: (state, { payload }) => {
+    return { ...state, ...payload.user };
+  },
+  [loginSuccess]: (state, { payload }) => {
+    return { ...state, ...payload.user };
+  },
   [logoutSuccess]: () => initialUser,
-  // [getCurrentUserSuccess]: (_, { payload }) => payload,
-  [getCurrentUserSuccess]: (state, { payload }) => {return{...state, ...payload.user}},
+  [getCurrentUserSuccess]: (state, { payload }) => {
+    return { ...state, ...payload.user };
+  },
   [addUserInfoSuccess]: (_, { payload }) => payload,
-  // [calculateUserSuccess]: (_, { payload }) => payload,
-  [calculateUserSuccess]: (state, { payload }) => {return{...state, ...payload.user}},
+  [calculateUserSuccess]: (state, { payload }) => {
+    return { ...state, ...payload.user };
+  },
 });
 
 const token = createReducer(null, {
