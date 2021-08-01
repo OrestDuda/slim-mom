@@ -8,10 +8,13 @@
   margin-bottom: 60px;
   scrollbar-color: #264061;
   padding-right: 5px;
-
+  width: 287px;
   @media screen and (min-width: 768px) {
     max-height: 270px;
-    padding-right: 25px;
+    width: 620px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 620px;
   }
 }
 ::-webkit-scrollbar {

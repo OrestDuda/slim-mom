@@ -7,16 +7,16 @@ function DairyProductListItem({
 }) {
   const dispatch = useDispatch();
 
-  if (foodItem.length > 16 && document.documentElement.clientWidth <= 768) {
-    const small = foodItem.split('');
-    let str = small.filter((_, index) => index < 11);
-    foodItem = str.join('') + '...';
-  }
-  if (foodItem.length > 30 && document.documentElement.clientWidth >= 768) {
-    const small = foodItem.split('');
-    let str = small.filter((_, index) => index < 27);
-    foodItem = str.join('') + '...';
-  }
+  // if (foodItem.length > 16 && document.documentElement.clientWidth <= 768) {
+  //   const small = foodItem.split('');
+  //   let str = small.filter((_, index) => index < 11);
+  //   foodItem = str.join('') + '...';
+  // }
+  // if (foodItem.length > 30 && document.documentElement.clientWidth >= 768) {
+  //   const small = foodItem.split('');
+  //   let str = small.filter((_, index) => index < 27);
+  //   foodItem = str.join('') + '...';
+  // }
 
   const onDelete = id => dispatch(mealsOperations.deleteFoodFromMeals(id));
 
