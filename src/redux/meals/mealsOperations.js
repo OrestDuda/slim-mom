@@ -16,8 +16,9 @@ const {
   deleteFoodFromMealsError,
 } = mealsActions;
 
-const getMealsByDay = mealsDate => async dispatch => {
+const getMealsByDay = () => async (dispatch, getState) => {
   //получить блюда по дате , входные данные дата
+  const mealsDate = getState().meals.setDate;
   dispatch(fetchMealsByDayRequest());
   try {
     const { data } = await axios.get(`/journal/${mealsDate}`);
@@ -42,10 +43,10 @@ const addFoodToMeals = (foodItem, portionSize, onDay) => async dispatch => {
   }
 };
 
-const deleteFoodFromMeals = foodId => async dispatch => {
+const deleteFoodFromMeals = foodId => async (dispatch, getState) => {
   //удалить еду из блюд. нужен ид еды
 
-  const mealsDate = useSelector(mealsSelectors.getMealsDate);
+  const mealsDate = getState().meals.setDate;
   dispatch(deleteFoodFromMealsRequest());
   try {
     await axios.delete(`/journal/${mealsDate}/${foodId}`);
