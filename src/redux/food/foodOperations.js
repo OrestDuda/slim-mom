@@ -12,6 +12,7 @@ const {
 } = foodActions;
 
 const getFood = () => async dispatch => {
+  // получить весь список еды что есть в базе
   dispatch(fetchFoodRequest());
   try {
     const { data } = await axios.get('/catalogue/all');
@@ -23,6 +24,7 @@ const getFood = () => async dispatch => {
 };
 
 const getFoodByQuery = query => async dispatch => {
+  // поиск еды по квери(условию)
   dispatch(fetchFoodByQueryRequest());
   try {
     const { data } = await axios.get(`/catalogue?search=${query}`);

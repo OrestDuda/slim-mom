@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import userOperations from '../../redux/user/userOperations';
 import styles from '../DailyCaloriesForm/DailyCaloriesForm.module.scss';
+import { userSelectors } from '../../redux/user';
+import Modal from '../Modal/Modal';
 
 export default function CalculatorFormPublic() {
   const [publicUser, setPublicUser] = useState({
@@ -11,6 +13,10 @@ export default function CalculatorFormPublic() {
     desiredWeight: '',
     bloodType: '1',
   });
+  const [modalWindow, setModalWindow] = useState({
+    isOpen: false,
+  });
+  const PublicUserData = useSelector(userSelectors.getPublicUser);
   const dispatch = useDispatch();
 
   const BloodType = {
@@ -46,10 +52,19 @@ export default function CalculatorFormPublic() {
       desiredWeight: '',
       bloodType: '1',
     });
+    setModalWindow({ isOpen: true });
   };
+  function toggleModal() {
+    setModalWindow({
+      isOpen: false,
+    });
+  }
 
   return (
     <div>
+      {modalWindow.isOpen && (
+        <Modal onClose={toggleModal} userData={PublicUserData} />
+      )}
       <div className={styles.title}>
         Просчитай свою суточную норму калорий прямо сейчас
       </div>

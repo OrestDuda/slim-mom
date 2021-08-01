@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import userOperations from '../redux/user/userOperations';
 import Loader from '../Components/Loader/Loader';
@@ -8,7 +8,6 @@ import PublicRoute from '../Components/PublicRoute/PublicRoute';
 import userSelectors from '../redux/user/userSelectors';
 import Header from './Header/Header';
 import RightSideBar from './RightSideBar/RightSideBar';
-import Modal from './Modal/Modal';
 
 const MainPage = lazy(() =>
   import('../Pages/MainPage/MainPage' /* webpackChunkName: "home" */),
@@ -40,7 +39,6 @@ export default function App() {
   return (
     <>
       <Header />
-      <Modal />
       <Suspense fallback={<Loader />}>
         <Switch>
           <PublicRoute path="/" exact restricted redirectTo="/calculator">
