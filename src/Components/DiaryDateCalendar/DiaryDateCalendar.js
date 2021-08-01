@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import DatePicker from 'react-datepicker';
@@ -20,7 +19,7 @@ const DiaryDateCalendar = () => {
     <div className={styles.date}>
       <DatePicker
         className={styles.calendar}
-        dateFormat="dd-MM-yyyy"
+        dateFormat="dd.MM.yyyy"
         selected={startDate}
         onChange={date => onChange(date)}
       />

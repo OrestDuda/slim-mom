@@ -16,11 +16,6 @@ const {
 } = mealsActions;
 const initialMeals = { onDay: null, food: [] };
 const meals = createReducer(initialMeals, {
-
-  [fetchMealsByDaySuccess]: (_, { payload }) => payload.dayJournal,
-  [addFoodToMealsSuccess]: (state, { payload }) => [...state, payload],
-  [deleteFoodFromMealsSuccess]: (state, actions) =>
-    state.filter(({ foodId }) => foodId !== actions.payload),
   [fetchMealsByDaySuccess]: (state, { payload }) => {
     return { ...state, ...payload.dayJournal };
   },
