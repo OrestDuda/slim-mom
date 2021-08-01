@@ -48,7 +48,6 @@ const register =
 
     try {
       const response = await axios.post('/users/registration', userInfo);
-      console.dir(response.data.user.token);
       token.set(response.data.user.token);
       dispatch(registerSuccess(response.data));
     } catch (error) {
