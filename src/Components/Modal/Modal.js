@@ -3,7 +3,10 @@ import { createPortal } from 'react-dom';
 import styles from './Modal.module.scss';
 
 const modalRoot = document.querySelector('#modal-root');
-function Modal({ onClose, userData }) {
+function Modal({
+  onClose,
+  userData: { dailyLimit, notRecommendedCategories },
+}) {
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
@@ -22,10 +25,14 @@ function Modal({ onClose, userData }) {
       onClose();
     }
   };
+  const list = notRecommendedCategories.join(', ');
 
   return createPortal(
     <div className={styles.backdrop} onClick={handleBackdropClick}>
-      <div className={styles.content}>Hello</div>
+      <div className={styles.content}>
+        <p>{dailyLimit}</p>
+        <p>{list}</p>
+      </div>
     </div>,
     modalRoot,
   );

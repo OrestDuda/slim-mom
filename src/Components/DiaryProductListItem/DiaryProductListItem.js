@@ -2,7 +2,7 @@ import styles from './DiaryProductListItem.module.scss';
 import mealsOperations from '../../redux/meals/mealsOperations';
 import { useDispatch } from 'react-redux';
 
-export default function DairyProductListItem({
+function DairyProductListItem({
   product: { foodItem, portionSize, kcal, _id },
 }) {
   const dispatch = useDispatch();
@@ -29,11 +29,9 @@ export default function DairyProductListItem({
         <span> ккал</span>
       </td>
       <td className={styles.td}>
-        <button
-          onClick={() => onDelete(_id)}
-          className={styles.delete}
-        ></button>
+        <button onClick={() => onDelete(_id)} className={styles.delete} />
       </td>
     </tr>
   );
 }
+export default DairyProductListItem;

@@ -59,11 +59,10 @@ export default function CalculatorFormPublic() {
       isOpen: false,
     });
   }
-
   return (
     <div>
-      {modalWindow.isOpen && (
-        <Modal onClose={toggleModal} userData={PublicUserData} />
+      {modalWindow.isOpen && PublicUserData.target !== undefined && (
+        <Modal onClose={toggleModal} userData={PublicUserData.target} />
       )}
       <div className={styles.title}>
         Просчитай свою суточную норму калорий прямо сейчас
