@@ -13,16 +13,18 @@ body {
 }
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 //colors
 
 $text-color: #212121;
-$secondary-text-color: #9B9FAA;
+$secondary-text-color: #9b9faa;
 $thirdly-color: #264061;
 $white-color: #ffffff;
-$links-color: #84898B;
-$bg-color: #FC842D;
+$links-color: #84898b;
+$bg-color: #fc842d;
 
 // button
 

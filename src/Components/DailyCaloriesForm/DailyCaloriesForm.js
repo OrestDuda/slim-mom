@@ -62,7 +62,7 @@ export default function CalculatorFormPublic() {
   return (
     <div>
       {modalWindow.isOpen && PublicUserData.target !== undefined && (
-        <Modal onClose={toggleModal} userData={PublicUserData.target} />
+        <Modal onClose={toggleModal} />
       )}
       <div className={styles.title}>
         Просчитай свою суточную норму калорий прямо сейчас

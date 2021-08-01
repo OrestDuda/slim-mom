@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import s from "./BasicButton.module.scss";
+import styles from './BasicButton.module.scss';
 
 const BasicButton = ({ children, ...props }) => {
   return (
-    <button className={s.basic_button} {...props}>
+    <button className={styles.basic_button} {...props}>
       {children}
     </button>
   );
