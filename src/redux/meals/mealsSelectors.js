@@ -6,7 +6,6 @@ const getFood = state => state.meals.meals.food;
 
 const getLoadingMeals = state => state.meals.loading;
 
-const mealsSelectors = { getMealsId, getFood, getLoadingMeals, getMealsDate };
 const getDate = state => state.meals.setDate;
 
 const mealsSelectors = {
@@ -14,6 +13,7 @@ const mealsSelectors = {
   getFood,
   getLoadingMeals,
   getDate,
+  getMealsDate,
 };
 
 export default mealsSelectors;
