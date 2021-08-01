@@ -9,6 +9,7 @@ const fetchFoodByQuerySuccess = createAction('food/fetchFoodQuerySuccess');
 const fetchFoodByQueryError = createAction('food/fetchFoodQueryError');
 
 const changeFilter = createAction('food/changeFilter');
+const cleanState = createAction('food/cleanState');
 
 const foodActions = {
   fetchFoodRequest,
@@ -18,6 +19,7 @@ const foodActions = {
   fetchFoodByQueryRequest,
   fetchFoodByQuerySuccess,
   fetchFoodByQueryError,
+  cleanState,
 };
 
 export default foodActions;

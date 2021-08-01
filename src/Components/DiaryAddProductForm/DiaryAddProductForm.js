@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { debounce } from 'debounce';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import styles from './DiaryAddProductForm.module.scss';
 
@@ -15,11 +15,20 @@ const DiaryAddProductForm = ({ toggleList }) => {
   const [portionSize, setGramm] = useState('');
 
   const dispatch = useDispatch();
-  useSelector(foodSelectors.getFoodFilter);
 
   const meals = useSelector(foodSelectors.getFilteredFood);
   const date = useSelector(mealsSelectors.getDate);
-
+  /**
+   * reset food state
+   */
+  const foodState = useSelector(foodSelectors.getFood);
+  const filterState = useSelector(foodSelectors.getFoodFilter);
+  if (foodState.length > 0 && !filterState) {
+    dispatch(foodActions.cleanState());
+  }
+  /**
+   * reset food state
+   */
   const handleGrammChange = event => setGramm(+event.target.value);
 
   const handleSubmit = event => {
@@ -34,8 +43,12 @@ const DiaryAddProductForm = ({ toggleList }) => {
   const onSearch = event => {
     setProduct(event.target.value);
     dispatch(foodActions.changeFilter(event.target.value));
-    debounce(dispatch(foodOperations.getFoodByQuery(foodItem)), 500);
+    // debounce(dispatch(foodOperations.getFoodByQuery(foodItem)), 500);
+    if (event.target.value.length > 2) {
+      dispatch(foodOperations.getFoodByQuery(foodItem));
+    }
   };
+
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <input
