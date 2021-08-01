@@ -1,29 +1,27 @@
 .calendar {
-    color: rgba(33, 33, 33, 1);
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.22;
-    font-family: Verdana, sans-serif;
-    border: none;
-    width: 138px;
-    height: 20px;
-    padding: 0;
-    margin-bottom: 30px;
-  }
-  
-  .react-datepicker__month-container {
-    height: 200px;
-  }
+  border: none;
+  font-family: 'Verdana';
+  font-size: 18px;
+  font-weight: 700;
+  color: #212121;
+  width: 120px;
+  margin-right: 20px;
+
   @media screen and (min-width: 768px) {
-    .calendar {
-      font-size: 34px;
-      height: 38px;
-      line-height: 1.215;
-      width: 219px;
-      margin-bottom: 0;
-    }
-    .CalendarContainer {
-      position: relative;
-      z-index: 101;
-    }
+    font-size: 34px;
+    width: 220px;
   }
+}
+
+.date {
+  display: flex;
+  align-items: baseline;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    margin-top: 100px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 140px;
+  }
+}

@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-import styles from "./DairyPage.module.css";
-=======
 import styles from './DairyPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { debounce } from 'debounce';
@@ -65,4 +62,3 @@ const DiaryPage = () => {
 };
 
 export default DiaryPage;
->>>>>>> Stashed changes

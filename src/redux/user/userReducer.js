@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
-
 import userActions from './userActions';
+
 const {
   registerSuccess,
   registerError,

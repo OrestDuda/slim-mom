@@ -12,15 +12,15 @@ const {
   deleteFoodFromMealsRequest,
   deleteFoodFromMealsSuccess,
   deleteFoodFromMealsError,
+  changeDate,
 } = mealsActions;
 const initialMeals = { onDay: null, food: [] };
 const meals = createReducer(initialMeals, {
-<<<<<<< Updated upstream
+
   [fetchMealsByDaySuccess]: (_, { payload }) => payload.dayJournal,
   [addFoodToMealsSuccess]: (state, { payload }) => [...state, payload],
   [deleteFoodFromMealsSuccess]: (state, actions) =>
     state.filter(({ foodId }) => foodId !== actions.payload),
-=======
   [fetchMealsByDaySuccess]: (state, { payload }) => {
     return { ...state, ...payload.dayJournal };
   },
@@ -33,7 +33,13 @@ const meals = createReducer(initialMeals, {
       food: state.food.filter(({ _id }) => _id !== action.payload),
     };
   },
->>>>>>> Stashed changes
+});
+const date = new Date();
+const jsonData = date.toJSON();
+const formatData = jsonData.slice(0, 10);
+
+const setDate = createReducer(formatData, {
+  [changeDate]: (_, { payload }) => payload,
 });
 
 const setError = (_, { payload }) => payload;
@@ -60,4 +66,5 @@ export default combineReducers({
   meals,
   error,
   loading,
+  setDate,
 });

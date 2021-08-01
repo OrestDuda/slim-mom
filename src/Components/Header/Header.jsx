@@ -13,8 +13,6 @@ export default function Header () {
     <div className={styles.container}>
       <header >
         <Logo />
-        <span className={styles.slash}></span>
-        <Nav/>
         <span className={styles.slash}/>
           {userLoggedIn ? <UserNav /> : <Nav />}
           {userLoggedIn && <UserInfo />}

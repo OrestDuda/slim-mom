@@ -1,18 +1,4 @@
-<<<<<<< Updated upstream
-import React from 'react';
-import { Component } from 'react';
-import { connect } from 'react-redux';
-import moment from 'moment';
-import Calendar from './Calendar';
-import setDate from '../../redux/calendar/calendarAction';
-import productOperations from '../../redux/products/productOperations';
 
-import style from './DiaryDateCalendar.module.css';
-
-class DiaryDateCalendar extends Component {
-  state = {
-    date: '',
-=======
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import DatePicker from 'react-datepicker';
@@ -29,39 +15,28 @@ const DiaryDateCalendar = () => {
     const formatData = jsonData.slice(0, 10);
     dispatch(mealsActions.changeDate(formatData));
     setStartDate(date);
->>>>>>> Stashed changes
   };
-
-  componentDidMount() {
-    this.props.setDate(moment(Date.now()).format('YYYY-MM-DD'));
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.date !== this.state.date) {
-      this.props.toFetchProducts(this.state.date);
-    }
-  }
-
-  handleTap = (someDate, setSomeDate) => {
-    setSomeDate(someDate);
-
-    const result = someDate ? moment(someDate).format('YYYY-MM-DD') : 0;
-    this.setState({ date: result });
-    this.props.setDate(result);
-  };
-  render() {
-    return (
-      <div className={style.CalendarContainer}>
-        <Calendar onTap={this.handleTap} />
-      </div>
-    );
-  }
-}
-
-const mapDispatchToProps = {
-  setDate,
-  toFetchProducts: productOperations.fetchProducts,
+  return (
+    <div className={styles.date}>
+      <DatePicker
+        className={styles.calendar}
+        dateFormat="dd-MM-yyyy"
+        selected={startDate}
+        onChange={date => onChange(date)}
+      />
+      <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+        <defs />
+        <path
+          fill="#9B9FAA"
+          d="M15 9h-2v2h2V9zM11 9H9v2h2V9zM7.00008 9H5.00006v2h2.00002V9z"
+        />
+        <path
+          fill="#9B9FAA"
+          d="M17 2.00001h-1V0h-2v2.00001H6.00001V0H4v2.00001h-.99999c-1.11 0-1.98998.9-1.98998 2.00002L1 18c0 1.1.89001 2 2.00001 2H17c1.1 0 2-.9 2-2V3.99998c0-1.09997-.9-1.99997-2-1.99997zM17 18H3.00001V6.99998H17V18z"
+        />
+      </svg>
+    </div>
+  );
 };
 
-export default connect(null, mapDispatchToProps)(DiaryDateCalendar);
-
+export default DiaryDateCalendar;

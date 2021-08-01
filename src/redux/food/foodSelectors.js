@@ -4,15 +4,18 @@ const getLoadingFood = state => state.food.loading;
 
 const getFoodFilter = state => state.food.foodFilter;
 
-const getFood = state => state.food.food;
+const getFood = state => state.food.food.results;
 
 const getFilteredFood = createSelector(
   [getFood, getFoodFilter],
   (food, foodFilter) => {
     const normalizedFilter = foodFilter.toLowerCase();
-    return food.filter(food =>
-      food.title.ru.toLowerCase().includes(normalizedFilter),
-    );
+    if (food) {
+      return food.filter(food =>
+        food.title.ru.toLowerCase().includes(normalizedFilter),
+      );
+    }
+    return [];
   },
 );
 

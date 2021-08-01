@@ -1,0 +1,28 @@
+.list {
+  padding: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 210px;
+  display: inline-block;
+  table-layout: fixed;
+  margin-bottom: 60px;
+  scrollbar-color: #264061;
+  padding-right: 5px;
+
+  @media screen and (min-width: 768px) {
+    max-height: 270px;
+    padding-right: 25px;
+  }
+}
+::-webkit-scrollbar {
+  width: 6px;
+  padding: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f1f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #264061;
+  height: 40px;
+}
