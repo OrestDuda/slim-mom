@@ -7,7 +7,7 @@ html {
   *::after {
     box-sizing: inherit;
   }
-  .container {
+  .container_Siderbar {
     //width: 320px;
     padding: 40px 15px 24px 15px;
     background: #f0f1f3;
@@ -54,7 +54,7 @@ html {
   }
   
   @media screen and (min-width: 768px) {
-    .container {
+    .container_Siderbar {
       width: 100%;
       padding: 0 99px 0px 87px;
       display: flex;
@@ -95,9 +95,9 @@ html {
   }
   
   @media screen and (min-width: 1280px) {
-    .container {
+    .container_Siderbar {
       width: 535px;
-      padding: 141px 0 162px 90px;
+      padding: 292px 175px 0 90px;
       display: block;
      // background-image: url('../../assets/images/desktop/leaves-sidebar-desktop-x1-v2-min.png');
       background-position: 0px -135px;
@@ -123,7 +123,7 @@ html {
   @media screen and (min-device-pixel-ratio: 2) and (min-width: 1280px),
     screen and (min-resolution: 192dpi) and (min-width: 1280px),
     screen and (min-resolution: 2dppx) and (min-width: 1280px) {
-    .container {
+    .container_Siderbar {
      // background-image: url('../../assets/images/desktop/leaves-sidebar-desktop-x2-v2-min.png');
       background-position: 0px -135px;
     }

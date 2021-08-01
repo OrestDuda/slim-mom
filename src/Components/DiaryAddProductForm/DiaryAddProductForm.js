@@ -27,9 +27,9 @@ const DiaryAddProductForm = ({ toggleList }) => {
     dispatch(mealsOperations.addFoodToMeals(foodItem, portionSize, date));
     setProduct('');
     setGramm('');
-    if (document.documentElement.clientWidth <= 768) {
-      toggleList();
-    }
+    // if (document.documentElement.clientWidth <= 768) {
+    //   toggleList();
+    // }
   };
   const onSearch = event => {
     setProduct(event.target.value);
