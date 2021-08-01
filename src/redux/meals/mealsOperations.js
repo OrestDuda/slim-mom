@@ -17,6 +17,7 @@ const {
 } = mealsActions;
 
 const getMealsByDay = mealsDate => async dispatch => {
+  //получить блюда по дате , входные данные дата
   dispatch(fetchMealsByDayRequest());
   try {
     const { data } = await axios.get(`/journal/${mealsDate}`);
@@ -28,6 +29,7 @@ const getMealsByDay = mealsDate => async dispatch => {
 };
 
 const addFoodToMeals = (foodItem, portionSize, onDay) => async dispatch => {
+  // добавить еду к блюдам . входные данные (еду, порция, день)
   const foodToAdd = { foodItem, portionSize, onDay };
 
   dispatch(addFoodToMealsRequest());
@@ -41,6 +43,7 @@ const addFoodToMeals = (foodItem, portionSize, onDay) => async dispatch => {
 };
 
 const deleteFoodFromMeals = foodId => async dispatch => {
+  //удалить еду из блюд. нужен ид еды
   const mealsDate = useSelector(mealsSelectors.getMealsDate);
   dispatch(deleteFoodFromMealsRequest());
   try {

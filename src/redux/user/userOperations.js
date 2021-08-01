@@ -38,13 +38,14 @@ const token = {
 };
 
 const register = (email, name, password) => async dispatch => {
+  //Регистрация , входные параметры (почта,имя,пароль)
   const userInfo = { email, name, password };
 
   dispatch(registerRequest());
 
   try {
     const response = await axios.post('/users/registration', userInfo);
-    token.set(response.data.token);
+    token.set(response.data.user.token);
     dispatch(registerSuccess(response.data));
   } catch (error) {
     notify(error.message);
@@ -53,12 +54,13 @@ const register = (email, name, password) => async dispatch => {
 };
 
 const logIn = (email, password) => async dispatch => {
+  //логин входные данные (почта,пароль)
   const userInfo = { email, password };
 
   dispatch(loginRequest());
   try {
     const { data } = await axios.post('/users/login', userInfo);
-    token.set(data.token);
+    token.set(data.user.token);
     dispatch(loginSuccess(data));
   } catch (error) {
     notify(error.message);
@@ -79,6 +81,7 @@ const logOut = () => async dispatch => {
 };
 
 const getCurrentUser = () => async (dispatch, getState) => {
+  //функция для получение текущего юзера , так же для проверки есть ли токен в локал сторедже - для автологина
   //Забираем токен из localStorage через getState()
   const {
     userInfo: { token: persistedTokenOfLoggedUser },
@@ -103,6 +106,7 @@ const getCurrentUser = () => async (dispatch, getState) => {
 
 const saveUserParameters =
   (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
+    // На данный момент не работает, не использовать , на беке нету путей для функционала
     const userParameters = {
       height,
       age,
@@ -125,6 +129,7 @@ const saveUserParameters =
 
 const calculateLoggedInUser =
   (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
+    //Посчитать залогиненого юзера , возвращает всю инфо по юзеру. входные данные (рост,возраст,текущий вес, желаемый вес, тип крови)=параметры передавать отдельно а не одним обьектом
     const userParameters = {
       height,
       age,
@@ -145,6 +150,7 @@ const calculateLoggedInUser =
 
 const publicUserCalculate =
   (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
+    //Посчитать публичного юзера , возвращает только кол-во  калорий и нерекомендуемую еду. входные данные (рост,возраст,текущий вес, желаемый вес, тип крови)=параметры передавать отдельно а не одним обьектом
     const userParameters = {
       height,
       age,
