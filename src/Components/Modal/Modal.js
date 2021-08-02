@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { userSelectors } from '../../redux/user';
 import BasicButton from '../BasicButton/BasicButton';
 import { Link } from 'react-router-dom';
+import CloseButton from 'react-bootstrap/CloseButton';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -33,6 +34,7 @@ function Modal({ onClose }) {
   return createPortal(
     <div className={styles.backdrop} onClick={handleBackdropClick}>
       <div className={styles.content}>
+        <CloseButton className={styles.closeButton} onClick={onClose} />
         <h1 className={styles.title}>
           Ваша рекомендуемая суточная норма калорий составляет
         </h1>

@@ -29,6 +29,15 @@
     width: 1280px;
     padding: 64px 90px 68px 90px;
   }
+  .closeButton {
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: block;
+      position: absolute;
+      top: 24px;
+      right: 24px;
+    }
+  }
   .title {
     font-size: 18px;
     line-height: 26px;

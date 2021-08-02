@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import store from './redux/store';
 import './index.scss';
-import "./assets/fonts/fonts.scss"
+import './assets/fonts/fonts.scss';
 import './services/baseURL';
 import App from './Components/App';
 
