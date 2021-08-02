@@ -4,7 +4,7 @@ const getLoadingFood = state => state.food.loading;
 
 const getFoodFilter = state => state.food.foodFilter;
 
-const getFood = state => state.food.food.results;
+const getFood = state => state.food.food;
 
 const getFilteredFood = createSelector(
   [getFood, getFoodFilter],

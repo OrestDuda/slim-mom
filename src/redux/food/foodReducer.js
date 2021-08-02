@@ -10,11 +10,15 @@ const {
   fetchFoodByQueryRequest,
   fetchFoodByQuerySuccess,
   fetchFoodByQueryError,
+  cleanState,
 } = foodActions;
 
 const food = createReducer([], {
   [fetchFoodSuccess]: (_, { payload }) => payload,
   [fetchFoodByQuerySuccess]: (_, { payload }) => payload,
+  [cleanState]: (state, { payload }) => {
+    return (state = []);
+  },
 });
 
 const foodFilter = createReducer('', {
