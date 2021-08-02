@@ -122,13 +122,14 @@ const DiaryAddProductForm = ({ toggleList }) => {
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <div style={{ width: 240 }}>
+      <div className={styles.searchBar}>
         <Autocomplete
           value={foodItem}
           id="search_v2"
           disableClearable
           options={foodState.map(option => option.title.ru)}
           onChange={onSelect}
+          forcePopupIcon={false}
           renderInput={params => (
             <TextField
               {...params}
@@ -142,7 +143,7 @@ const DiaryAddProductForm = ({ toggleList }) => {
         />
       </div>
 
-      <div style={{ width: 104 }}>
+      <div className={styles.grammAdd}>
         <TextField
           id="standard-search"
           label="Граммы"
