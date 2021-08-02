@@ -64,115 +64,117 @@ export default function CalculatorFormPublic() {
       {modalWindow.isOpen && PublicUserData.target !== undefined && (
         <Modal onClose={toggleModal} />
       )}
-      <div className={styles.title}>
-        Просчитай свою суточную норму калорий прямо сейчас
-      </div>
-      <form className={styles.form} onSubmit={submitForm}>
-        <div className={styles.input_wrapper}>
-          <div className={styles.left_input}>
-            <label className={styles.label} htmlFor="height">
-              Рост *
-            </label>
-            <input
-              className={styles.input}
-              type="number"
-              name="height"
-              required
-              value={publicUser.height}
-              onChange={handleChange}
-            />
-            <label className={styles.label} htmlFor="age">
-              Возраст *
-            </label>
-            <input
-              className={styles.input}
-              type="number"
-              name="age"
-              required
-              value={publicUser.age}
-              onChange={handleChange}
-            />
-            <label className={styles.label} htmlFor="currentWeight">
-              Текущий вес *
-            </label>
-            <input
-              className={styles.input}
-              type="number"
-              name="currentWeight"
-              required
-              value={publicUser.currentWeight}
-              onChange={handleChange}
-            />
-          </div>
-          <div className={styles.right_input}>
-            <label className={styles.label} htmlFor="desiredWeight">
-              Желаемый вес *
-            </label>
-            <input
-              className={styles.input}
-              type="number"
-              name="desiredWeight"
-              required
-              value={publicUser.desiredWeight}
-              onChange={handleChange}
-            />
-            <div className={styles.wrapper}>
-              <p className={styles.label_radio_boxes}>Группа крови *</p>
-              <div className={styles.radio_boxes}>
-                <label className={styles.label_radio} htmlFor="bloodType_1">
-                  <input
-                    id="bloodType_1"
-                    type="radio"
-                    name="bloodType"
-                    checked={publicUser.bloodType === BloodType.FIRST_GROUP}
-                    value={BloodType.FIRST_GROUP}
-                    onChange={handleChange}
-                  />
-                  1
-                </label>
-                <label className={styles.label_radio} htmlFor="bloodType_2">
-                  <input
-                    id="bloodType_2"
-                    type="radio"
-                    name="bloodType"
-                    checked={publicUser.bloodType === BloodType.SECOND_GROUP}
-                    value={BloodType.SECOND_GROUP}
-                    onChange={handleChange}
-                  />
-                  2
-                </label>
-                <label className={styles.label_radio} htmlFor="bloodType_3">
-                  <input
-                    id="bloodType_3"
-                    type="radio"
-                    name="bloodType"
-                    checked={publicUser.bloodType === BloodType.THIRD_GROUP}
-                    value={BloodType.THIRD_GROUP}
-                    onChange={handleChange}
-                  />
-                  3
-                </label>
-                <label className={styles.label_radio} htmlFor="bloodType_4">
-                  <input
-                    id="bloodType_4"
-                    type="radio"
-                    name="bloodType"
-                    checked={publicUser.bloodType === BloodType.FOURTH_GROUP}
-                    value={BloodType.FOURTH_GROUP}
-                    onChange={handleChange}
-                  />
-                  4
-                </label>
+      <div className={styles.container}>
+        <div className={styles.title}>
+          Просчитай свою суточную норму калорий прямо сейчас
+        </div>
+        <form className={styles.form} onSubmit={submitForm}>
+          <div className={styles.input_wrapper}>
+            <div className={styles.left_input}>
+              <label className={styles.label} htmlFor="height">
+                Рост *
+              </label>
+              <input
+                className={styles.input}
+                type="number"
+                name="height"
+                required
+                value={publicUser.height}
+                onChange={handleChange}
+              />
+              <label className={styles.label} htmlFor="age">
+                Возраст *
+              </label>
+              <input
+                className={styles.input}
+                type="number"
+                name="age"
+                required
+                value={publicUser.age}
+                onChange={handleChange}
+              />
+              <label className={styles.label} htmlFor="currentWeight">
+                Текущий вес *
+              </label>
+              <input
+                className={styles.input}
+                type="number"
+                name="currentWeight"
+                required
+                value={publicUser.currentWeight}
+                onChange={handleChange}
+              />
+            </div>
+            <div className={styles.right_input}>
+              <label className={styles.label} htmlFor="desiredWeight">
+                Желаемый вес *
+              </label>
+              <input
+                className={styles.input}
+                type="number"
+                name="desiredWeight"
+                required
+                value={publicUser.desiredWeight}
+                onChange={handleChange}
+              />
+              <div className={styles.wrapper}>
+                <p className={styles.label_radio_boxes}>Группа крови *</p>
+                <div className={styles.radio_boxes}>
+                  <label className={styles.label_radio} htmlFor="bloodType_1">
+                    <input
+                      id="bloodType_1"
+                      type="radio"
+                      name="bloodType"
+                      checked={publicUser.bloodType === BloodType.FIRST_GROUP}
+                      value={BloodType.FIRST_GROUP}
+                      onChange={handleChange}
+                    />
+                    1
+                  </label>
+                  <label className={styles.label_radio} htmlFor="bloodType_2">
+                    <input
+                      id="bloodType_2"
+                      type="radio"
+                      name="bloodType"
+                      checked={publicUser.bloodType === BloodType.SECOND_GROUP}
+                      value={BloodType.SECOND_GROUP}
+                      onChange={handleChange}
+                    />
+                    2
+                  </label>
+                  <label className={styles.label_radio} htmlFor="bloodType_3">
+                    <input
+                      id="bloodType_3"
+                      type="radio"
+                      name="bloodType"
+                      checked={publicUser.bloodType === BloodType.THIRD_GROUP}
+                      value={BloodType.THIRD_GROUP}
+                      onChange={handleChange}
+                    />
+                    3
+                  </label>
+                  <label className={styles.label_radio} htmlFor="bloodType_4">
+                    <input
+                      id="bloodType_4"
+                      type="radio"
+                      name="bloodType"
+                      checked={publicUser.bloodType === BloodType.FOURTH_GROUP}
+                      value={BloodType.FOURTH_GROUP}
+                      onChange={handleChange}
+                    />
+                    4
+                  </label>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.btn_wrapper}>
-          <button type="submit" className={styles.button}>
-            Похудеть
-          </button>
-        </div>
-      </form>
+          <div className={styles.btn_wrapper}>
+            <button type="submit" className={styles.button}>
+              Похудеть
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
