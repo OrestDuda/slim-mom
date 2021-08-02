@@ -1,3 +1,9 @@
+.container {
+  padding: 40px 15px 0 15px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .title {
   color: #fc842d;
@@ -13,12 +19,39 @@
 }
 
 .regBtn {
+  margin-right: 0;
+  padding: 0;
+  width: 176px;
+  height: 44px;
+  font-family: Verdana, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  background: #ffffff;
+  border: 2px solid #fc842d;
+  box-sizing: border-box;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #fc842d;
   margin-top: 20px;
+}
+
+regBtn:active,
+.regBtn:focus {
+  outline: none;
+  background: #ffffff;
+  color: #fc842d;
+  box-sizing: border-box;
+  box-shadow: none;
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    margin-top: 10px;
+    padding: 191px 294px 0 92px;
+    max-width: 768px;
   }
   .title {
     text-align: start;
@@ -27,16 +60,17 @@
     flex-direction: row;
   }
   .regBtn {
-    margin-top: 0px;
+    margin-top: 0;
     margin-left: 30px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .container {
-    margin-top: 10px;
+    padding: 213px 783px 0 115px;
+    max-width: 1280px;
   }
   .title {
-    margin-bottom: 70px;
+    margin-bottom: 71px;
   }
 }

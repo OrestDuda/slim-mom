@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 
@@ -65,11 +65,12 @@ const LoginForm = () => {
             placeholder="Пароль *"
           />
           <div className={styles.btnThumb}>
-            {/* <Button disabled={loading}>Вход</Button> */}
             <Button>Вход</Button>
-            {/*<Link to="/registration" className={styles.regBtn}>*/}
-            {/*  <Button view="btnReg">Регистрация</Button>*/}
-            {/*</Link>*/}
+            <Link to="/registration">
+              <Button view="btnReg" className={styles.regBtn}>
+                Регистрация
+              </Button>
+            </Link>
           </div>
         </Form>
       </Formik>

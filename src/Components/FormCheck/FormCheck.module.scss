@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
 
-  padding: 1rem 0px 0px 0px;
+  padding: 1rem 0 0 0;
   height: 55px;
   color: rgb(255, 0, 55);
 }
@@ -16,7 +16,6 @@
   line-height: 1.21;
   user-select: none;
   color: transparent;
-  transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .formCheckInput:focus ~ .label {
