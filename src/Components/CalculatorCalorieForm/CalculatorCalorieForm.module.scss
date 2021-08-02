@@ -1,21 +1,22 @@
 .container {
-  width: 100%;
+  max-width: 320px;
   margin: 0 auto;
+  padding: 30px 15px 0 15px;
 }
 
 .title {
-  margin-top: 30px;
   margin-bottom: 30px;
-  font-family: Verdana;
+  font-family: Verdana, serif;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 26px;
   color: #212121;
 }
-
+.wrapper {
+  margin-top: 20px;
+}
 .input_wrapper {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -33,100 +34,38 @@
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;
-  font-family: Verdana;
+  font-family: Verdana, serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.04em;
   color: #9b9faa;
-}
-
-.input {
-  border: none;
-  height: 20px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.input:focus {
-  outline: none;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    width: 100%;
-  }
-
-  .title {
-    font-size: 30px;
-    line-height: 37.5px;
-  }
-
-  .form {
-    display: flex;
-    width: 100%;
-    margin-bottom: 50px;
-    z-index: 1;
-  }
-
-  .left_input.right_inputs {
-    width: 50%;
-  }
-
-  .input_wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 40px;
-  }
-
-  .left_input {
-    display: block;
-    margin-right: 30px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 100%;
-  }
-
-  .title {
-    font-size: 35px;
-  }
-
-  .label {
-    margin-top: 40px;
-    margin-bottom: 0;
-  }
 }
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 40px;
 }
 
 .label_radio_boxes {
-  font-family: Verdana;
+  font-family: Verdana, serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.04em;
   color: #9b9faa;
-  margin-bottom: 10px;
 }
 
 .radio_boxes {
   display: flex;
   justify-content: space-between;
-  width: 239px;
 }
 
 .label_radio {
   text-align: center;
-  font-family: Verdana;
+  font-family: Verdana, serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -148,17 +87,28 @@
   color: #fc842d;
 }
 
-@media screen and (min-width: 768px) {
-  .label_radio_boxes {
-    margin-bottom: 20px;
-  }
+.input {
+  border: none;
+  height: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+}
+.label_radio_boxes {
+  margin-bottom: 10px;
+}
+
+.input:focus {
+  outline: none;
+}
+.btn_wrapper {
+  text-align: center;
 }
 .button {
-  margin: 0;
+  margin: auto;
   padding: 0;
   width: 176px;
   height: 44px;
-  font-family: Verdana;
+  font-family: Verdana, serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -167,7 +117,7 @@
   letter-spacing: 0.04em;
   color: #ffffff;
   background: #fc842d;
-  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  box-shadow: 0 4px 10px rgba(252, 132, 45, 0.5);
   border: 2px solid #fc842d;
   border-radius: 30px;
   cursor: pointer;
@@ -180,4 +130,71 @@
   color: #fc842d;
   box-sizing: border-box;
   box-shadow: none;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 100px 0 0 87px;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 37.5px;
+    margin-bottom: 60px;
+  }
+
+  .form {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+    z-index: 1;
+  }
+
+  .left_input {
+    width: 240px;
+    margin-right: 31px;
+  }
+  .right_input {
+    width: 240px;
+  }
+
+  .input_wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .btn_wrapper {
+    text-align: left;
+  }
+  .label_radio_boxes {
+    margin-bottom: 18.5px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 137px 560px 0 115px;
+  }
+
+  .title {
+    font-size: 35px;
+    margin-bottom: 68px;
+  }
+
+  .label {
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+  .input_wrapper {
+    margin-bottom: 107px;
+  }
+  .btn_wrapper {
+    text-align: right;
+  }
+  .wrapper {
+    margin-top: 40px;
+  }
 }
