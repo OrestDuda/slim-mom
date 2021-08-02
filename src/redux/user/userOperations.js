@@ -158,11 +158,17 @@ const publicUserCalculate =
       desiredWeight: Number.parseInt(desiredWeight),
       bloodType: Number.parseInt(bloodType),
     };
-    console.log(userParameters);
     dispatch(publicUserCalculateRequest());
     try {
       const { data } = await axios.patch(`/public`, userParameters);
-      dispatch(publicUserCalculateSuccess(data));
+      const { dailyLimit, notRecommendedCategories } = data.target;
+      dispatch(
+        publicUserCalculateSuccess({
+          ...userParameters,
+          dailyLimit,
+          notRecommendedCategories,
+        }),
+      );
     } catch (error) {
       notify(error.message);
       dispatch(publicUserCalculateError(error.message));
