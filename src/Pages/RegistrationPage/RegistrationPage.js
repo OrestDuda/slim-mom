@@ -15,10 +15,7 @@ const RegisterPage = () => {
 
   return (
     <>
-      <Container>
-        <RegistrationForm />
-      </Container>
-
+      <RegistrationForm />
       {/* {loading && <Spinner />} */}
     </>
   );

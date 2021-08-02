@@ -1,5 +1,8 @@
 .container {
-  margin-top: 40px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 15px 0 15px;
 }
 
 .title {
@@ -20,24 +23,26 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    margin-top: 157px;
+    max-width: 768px;
+    padding: 157px 299px 0 87px;
   }
   .title {
     text-align: start;
     margin-bottom: 40px;
   }
   .btnThumb {
-    flex-direction: row;
+    align-items: flex-start;
   }
   .regBtn {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-right: 30px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .container {
-    margin-top: 95px;
+    max-width: 1280px;
+    padding: 95px 783px 0 115px;
   }
   .title {
     margin-bottom: 60px;
