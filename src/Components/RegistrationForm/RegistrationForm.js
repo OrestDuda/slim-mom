@@ -27,6 +27,7 @@ const registrationSchema = Yup.object().shape({
     .trim()
     .required('Обязательное поле'),
   email: Yup.string()
+    .email()
     .min(3, 'Минимум 3 символа')
     .max(20, 'Максимум 20 символов')
     .trim()

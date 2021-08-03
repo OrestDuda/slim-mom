@@ -9,7 +9,7 @@ const DiaryProductList = () => {
     <table className={styles.list}>
       <tbody>
         {products.map(item => (
-          <DairyProductListItem product={item} />
+          <DairyProductListItem product={item} key={item._id} />
         ))}
       </tbody>
     </table>

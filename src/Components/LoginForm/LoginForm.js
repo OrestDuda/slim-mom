@@ -60,7 +60,7 @@ const LoginForm = () => {
           <FormCheck
             label="Пароль"
             name="password"
-            type="text"
+            type="password"
             id="password"
             placeholder="Пароль *"
           />
