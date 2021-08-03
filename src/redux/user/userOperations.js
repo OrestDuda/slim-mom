@@ -65,7 +65,7 @@ const logIn =
     dispatch(loginRequest());
     try {
       const { data } = await axios.post('/users/login', userInfo);
-      token.set(data.token);
+      token.set(data.user.token);
       dispatch(loginSuccess(data));
     } catch (error) {
       notify(error.message);
@@ -87,11 +87,7 @@ const logOut = () => async dispatch => {
 
 const getCurrentUser = () => async (dispatch, getState) => {
   //Забираем токен из localStorage через getState()
-  // const {
-  //   userInfo: { token: persistedTokenOfLoggedUser },
-  // } = getState();
 
-  //local storage to fix
   const persistedTokenOfLoggedUser = getState().user.token;
   if (!persistedTokenOfLoggedUser) {
     return;
@@ -110,27 +106,27 @@ const getCurrentUser = () => async (dispatch, getState) => {
   }
 };
 
-const saveUserParameters =
-  (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
-    const userParameters = {
-      height,
-      age,
-      currentWeight,
-      desiredWeight,
-      bloodType,
-    };
-
-    const userId = useSelector(userSelectors.getUserId);
-
-    dispatch(addUserInfoRequest());
-    try {
-      await axios.patch(`/users/${userId}`, userParameters);
-      dispatch(addUserInfoSuccess());
-    } catch (error) {
-      notify(error.message);
-      dispatch(addUserInfoError(error));
-    }
-  };
+// const saveUserParameters =
+//   (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
+//     const userParameters = {
+//       height,
+//       age,
+//       currentWeight,
+//       desiredWeight,
+//       bloodType,
+//     };
+//
+//     const userId = useSelector(userSelectors.getUserId);
+//
+//     dispatch(addUserInfoRequest());
+//     try {
+//       await axios.patch(`/users/${userId}`, userParameters);
+//       dispatch(addUserInfoSuccess());
+//     } catch (error) {
+//       notify(error.message);
+//       dispatch(addUserInfoError(error));
+//     }
+//   };
 
 const calculateLoggedInUser =
   ({ height, age, currentWeight, desiredWeight, bloodType }) =>
@@ -181,7 +177,7 @@ const userOperations = {
   logIn,
   logOut,
   getCurrentUser,
-  saveUserParameters,
+  // saveUserParameters,
   calculateLoggedInUser,
   publicUserCalculate,
 };

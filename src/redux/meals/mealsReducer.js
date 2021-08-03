@@ -17,7 +17,7 @@ const {
 const initialMeals = { onDay: null, food: [] };
 const meals = createReducer(initialMeals, {
   [fetchMealsByDaySuccess]: (state, { payload }) => {
-    return { ...state, ...payload.dayJournal };
+    return payload;
   },
   [addFoodToMealsSuccess]: (state, { payload }) => {
     return { ...state, ...payload.dayJournal };

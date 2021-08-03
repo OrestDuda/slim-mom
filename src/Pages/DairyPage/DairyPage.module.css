@@ -1,14 +1,24 @@
-.go{
+.go {
   font-family: Verdana, serif;
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.04em;
   color: #ffffff;
-  background: #fc842d;
-  border: none;
-  padding: 13px 46px;
   box-shadow: 0px 4px 10px rgb(252, 132, 45 / 50%);
-  border-radius: 30px;
   cursor: pointer;
+  text-indent: -9999px;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff), #fff;
+  background-position: center;
+  background-size: 14px 2px, 2px 14px;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: #fc842d;
+  border-radius: 50%;
+  padding: 25px;
+  margin: auto;
+  display: block;
+  margin-bottom: 60px;
 }

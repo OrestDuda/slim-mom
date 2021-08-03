@@ -21,8 +21,16 @@ const getMealsByDay = () => async (dispatch, getState) => {
   const mealsDate = getState().meals.setDate;
   dispatch(fetchMealsByDayRequest());
   try {
-    const { data } = await axios.get(`/journal/${mealsDate}`);
-    dispatch(fetchMealsByDaySuccess(data));
+    const response = await axios.get(`/journal/${mealsDate}`);
+    if (response.status === 204) {
+      return dispatch(
+        fetchMealsByDaySuccess({
+          onDay: null,
+          food: [],
+        }),
+      );
+    }
+    dispatch(fetchMealsByDaySuccess(response.data.dayJournal));
   } catch (error) {
     notify(error.message);
     dispatch(fetchMealsByDayError(error));

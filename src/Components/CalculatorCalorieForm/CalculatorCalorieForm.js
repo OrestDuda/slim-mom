@@ -9,7 +9,7 @@ export default function CalculatorCalorieForm() {
     height: '',
     age: '',
     desiredWeight: '',
-    bloodType: '1',
+    bloodType: '',
   });
   const dispatch = useDispatch();
 
@@ -39,12 +39,13 @@ export default function CalculatorCalorieForm() {
         bloodType: Number(currentUser.bloodType),
       }),
     );
-    // setCurrentUser({
-    //     currentWeight: "",
-    //     height: "",
-    //     age: "",
-    //     desiredWeight: "",
-    //     bloodType: "1"  })
+    setCurrentUser({
+      currentWeight: '',
+      height: '',
+      age: '',
+      desiredWeight: '',
+      bloodType: '1',
+    });
   };
 
   return (
