@@ -92,7 +92,7 @@
  * Option 2 START - get all catalogue
  */
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './DiaryAddProductForm.module.scss';
 import foodSelectors from '../../redux/food/foodSelectors';
 import mealsSelectors from '../../redux/meals/mealsSelectors';
@@ -100,6 +100,8 @@ import mealsOperations from '../../redux/meals/mealsOperations';
 
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import { useHistory } from 'react-router-dom';
+import useViewport from '../../Components/DiaryAddProductForm/helperDailAdd';
 
 const DiaryAddProductForm = ({ toggleList }) => {
   const [foodItem, setProduct] = useState('');
@@ -114,11 +116,22 @@ const DiaryAddProductForm = ({ toggleList }) => {
     setProduct(value);
   };
 
+  const { width } = useViewport();
+  const breakpoint = 767;
+
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(mealsOperations.addFoodToMeals(foodItem, portionSize, date));
     setProduct('');
     setGramm('');
+    if (width < breakpoint) {
+      handleGoBack();
+    }
+  };
+
+  const history = useHistory();
+  const handleGoBack = () => {
+    history.push('/dairy');
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit}>

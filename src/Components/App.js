@@ -8,7 +8,7 @@ import PublicRoute from '../Components/PublicRoute/PublicRoute';
 import userSelectors from '../redux/user/userSelectors';
 import Header from './Header/Header';
 import RightSideBar from './RightSideBar/RightSideBar';
-
+import DiaryAddProductForm from '../Components/DiaryAddProductForm/DiaryAddProductForm';
 const MainPage = lazy(() =>
   import('../Pages/MainPage/MainPage' /* webpackChunkName: "home" */),
 );
@@ -53,8 +53,11 @@ export default function App() {
           <PrivateRoute path="/calculator" redirectTo="/login">
             <CalculatorPage />
           </PrivateRoute>
-          <PrivateRoute path="/dairy" redirectTo="/login">
+          <PrivateRoute exact path="/dairy" redirectTo="/login">
             <DairyPage />
+          </PrivateRoute>
+          <PrivateRoute path="/dairy/add" redirectTo="/login">
+            <DiaryAddProductForm />
           </PrivateRoute>
         </Switch>
       </Suspense>
