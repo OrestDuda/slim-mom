@@ -134,43 +134,45 @@ const DiaryAddProductForm = ({ toggleList }) => {
     history.push('/dairy');
   };
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <div className={styles.searchBar}>
-        <Autocomplete
-          value={foodItem}
-          id="search_v2"
-          disableClearable
-          options={foodState.map(option => option.title.ru)}
-          onChange={onSelect}
-          forcePopupIcon={false}
-          renderInput={params => (
-            <TextField
-              {...params}
-              id="standard-search"
-              label="Введите название продукта"
-              margin="normal"
-              required
-              InputProps={{ ...params.InputProps, type: 'search' }}
-            />
-          )}
-        />
-      </div>
+    <div className={styles.wrapperForMobile}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.searchBar}>
+          <Autocomplete
+            value={foodItem}
+            id="search_v2"
+            disableClearable
+            options={foodState.map(option => option.title.ru)}
+            onChange={onSelect}
+            forcePopupIcon={false}
+            renderInput={params => (
+              <TextField
+                {...params}
+                id="standard-search"
+                label="Введите название продукта"
+                margin="normal"
+                required
+                InputProps={{ ...params.InputProps, type: 'search' }}
+              />
+            )}
+          />
+        </div>
 
-      <div className={styles.grammAdd}>
-        <TextField
-          id="standard-search"
-          label="Граммы"
-          margin="normal"
-          onChange={handleGrammChange}
-          value={portionSize}
-          required
-        />
-      </div>
+        <div className={styles.grammAdd}>
+          <TextField
+            id="standard-search"
+            label="Граммы"
+            margin="normal"
+            onChange={handleGrammChange}
+            value={portionSize}
+            required
+          />
+        </div>
 
-      <button className={styles.button} type="submit">
-        Добавить
-      </button>
-    </form>
+        <button className={styles.button} type="submit">
+          Добавить
+        </button>
+      </form>
+    </div>
   );
 };
 

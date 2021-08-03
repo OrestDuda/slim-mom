@@ -17,7 +17,7 @@ export default function UserNav() {
   navClasses.push(classToAdd);
   return (
     <nav className={styles.navBar}>
-      <button onClick={handleToggle}>
+      <button className={styles.burgerbtn} onClick={handleToggle}>
         {navbarOpen ? (
           <MdClose style={{ width: '24px', height: '24px' }} />
         ) : (

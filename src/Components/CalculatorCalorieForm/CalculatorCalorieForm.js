@@ -3,6 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import userOperations from "../../redux/user/userOperations";
 import styles from "../CalculatorCalorieForm/CalculatorCalorieForm.module.scss";
 
+<<<<<<< Updated upstream
+=======
+export default function CalculatorCalorieForm() {
+  const [currentUser, setCurrentUser] = useState({
+    currentWeight: '',
+    height: '',
+    age: '',
+    desiredWeight: '',
+    bloodType: '',
+  });
+  const dispatch = useDispatch();
+>>>>>>> Stashed changes
 
 export default function CalculatorCalorieForm(){
     const [currentUser, setCurrentUser] = useState({
@@ -13,6 +25,7 @@ export default function CalculatorCalorieForm(){
         bloodType: "1" });
     const dispatch = useDispatch();
 
+<<<<<<< Updated upstream
     const BloodType = {
         FIRST_GROUP: '1',
         SECOND_GROUP: '2',
@@ -27,6 +40,27 @@ export default function CalculatorCalorieForm(){
             [name]: value,
         }));
     };
+=======
+  const submitForm = event => {
+    event.preventDefault();
+    dispatch(
+      userOperations.calculateLoggedInUser({
+        age: Number(currentUser.age),
+        height: Number(currentUser.height),
+        currentWeight: Number(currentUser.currentWeight),
+        desiredWeight: Number(currentUser.desiredWeight),
+        bloodType: Number(currentUser.bloodType),
+      }),
+    );
+    setCurrentUser({
+      currentWeight: '',
+      height: '',
+      age: '',
+      desiredWeight: '',
+      bloodType: '1',
+    });
+  };
+>>>>>>> Stashed changes
 
     const submitForm = event => {
         event.preventDefault();

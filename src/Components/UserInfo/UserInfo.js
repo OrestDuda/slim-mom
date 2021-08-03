@@ -5,6 +5,7 @@ import userOperations from '../../redux/user/userOperations';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import useViewport from '../DiaryAddProductForm/helperDailAdd';
+import { IoReturnDownBackSharp } from 'react-icons/io5';
 
 export default function UserInfo() {
   const user = useSelector(userSelectors.getUser);
@@ -21,7 +22,9 @@ export default function UserInfo() {
   return (
     <div className={styles.userBox}>
       {width < breakpoint && location.pathname === '/dairy/add' && (
-        <button onClick={handleGoBack}>back</button>
+        <button className={styles.btnBack} onClick={handleGoBack}>
+          <IoReturnDownBackSharp style={{ width: '24px', height: '20px' }} />
+        </button>
       )}
       <div className={styles.userInfo}>
         <span className={styles.name}>{userName}</span>
