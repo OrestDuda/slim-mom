@@ -6,7 +6,7 @@ const MainPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-          <DailyCaloriesForm />
+        <DailyCaloriesForm />
       </div>
     </div>
   );

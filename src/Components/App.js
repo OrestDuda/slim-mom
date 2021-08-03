@@ -9,6 +9,8 @@ import userSelectors from '../redux/user/userSelectors';
 import Header from './Header/Header';
 import RightSideBar from './RightSideBar/RightSideBar';
 import DiaryAddProductForm from '../Components/DiaryAddProductForm/DiaryAddProductForm';
+import BgWrapper from '../Components/Layout/BgWrapper';
+
 const MainPage = lazy(() =>
   import('../Pages/MainPage/MainPage' /* webpackChunkName: "home" */),
 );
@@ -38,30 +40,36 @@ export default function App() {
 
   return (
     <>
-      <Header />
-      <Suspense fallback={<Loader />}>
-        <Switch>
-          <PublicRoute path="/" exact restricted redirectTo="/calculator">
-            <MainPage />
-          </PublicRoute>
-          <PublicRoute path="/registration" restricted redirectTo="/calculator">
-            <RegistrationPage />
-          </PublicRoute>
-          <PublicRoute path="/login" restricted redirectTo="/dairy">
-            <LoginPage />
-          </PublicRoute>
-          <PrivateRoute path="/calculator" redirectTo="/login">
-            <CalculatorPage />
-          </PrivateRoute>
-          <PrivateRoute exact path="/dairy" redirectTo="/login">
-            <DairyPage />
-          </PrivateRoute>
-          <PrivateRoute path="/dairy/add" redirectTo="/login">
-            <DiaryAddProductForm />
-          </PrivateRoute>
-        </Switch>
-      </Suspense>
-      {userLoggedIn && <RightSideBar />}
+      <BgWrapper>
+        <Header />
+        <Suspense fallback={<Loader />}>
+          <Switch>
+            <PublicRoute path="/" exact restricted redirectTo="/calculator">
+              <MainPage />
+            </PublicRoute>
+            <PublicRoute
+              path="/registration"
+              restricted
+              redirectTo="/calculator"
+            >
+              <RegistrationPage />
+            </PublicRoute>
+            <PublicRoute path="/login" restricted redirectTo="/dairy">
+              <LoginPage />
+            </PublicRoute>
+            <PrivateRoute path="/calculator" redirectTo="/login">
+              <CalculatorPage />
+            </PrivateRoute>
+            <PrivateRoute exact path="/dairy" redirectTo="/login">
+              <DairyPage />
+            </PrivateRoute>
+            <PrivateRoute path="/dairy/add" redirectTo="/login">
+              <DiaryAddProductForm />
+            </PrivateRoute>
+          </Switch>
+        </Suspense>
+        {userLoggedIn && <RightSideBar />}
+      </BgWrapper>
     </>
   );
 }
