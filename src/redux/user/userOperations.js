@@ -1,9 +1,8 @@
 import axios from 'axios';
-import notify from '../../services/notify';
 import { useSelector } from 'react-redux';
 import userSelectors from './userSelectors';
-
 import userActions from './userActions';
+import showError from '../../services/helper';
 const {
   registerRequest,
   registerSuccess,
@@ -41,17 +40,16 @@ const register =
   ({ email, name, password }) =>
   async dispatch => {
     //Регистрация , входные параметры (почта,имя,пароль)
-
     const userInfo = { email, name, password };
-
     dispatch(registerRequest());
-
     try {
       const response = await axios.post('/users/registration', userInfo);
       token.set(response.data.user.token);
       dispatch(registerSuccess(response.data));
     } catch (error) {
-      notify(error.message);
+      if (error.response.status === 409) {
+        showError(error.response.data.message);
+      }
       dispatch(registerError(error.message));
     }
   };
@@ -61,14 +59,12 @@ const logIn =
   async dispatch => {
     //логин входные данные (почта,пароль)
     const userInfo = { email, password };
-
     dispatch(loginRequest());
     try {
       const { data } = await axios.post('/users/login', userInfo);
       token.set(data.user.token);
       dispatch(loginSuccess(data));
     } catch (error) {
-      notify(error.message);
       dispatch(loginError(error.message));
     }
   };
@@ -80,7 +76,6 @@ const logOut = () => async dispatch => {
     token.unset();
     dispatch(logoutSuccess());
   } catch (error) {
-    notify(error.message);
     dispatch(logoutError(error.message));
   }
 };
@@ -92,7 +87,6 @@ const getCurrentUser = () => async (dispatch, getState) => {
   if (!persistedTokenOfLoggedUser) {
     return;
   }
-
   token.set(persistedTokenOfLoggedUser);
   dispatch(getCurrentUserRequest());
 
@@ -101,7 +95,6 @@ const getCurrentUser = () => async (dispatch, getState) => {
 
     dispatch(getCurrentUserSuccess(data));
   } catch (error) {
-    notify(error.message);
     dispatch(getCurrentUserError(error.message));
   }
 };
@@ -145,7 +138,6 @@ const calculateLoggedInUser =
       const { data } = await axios.patch(`/calculator`, userParameters);
       dispatch(calculateUserSuccess(data));
     } catch (error) {
-      notify(error.message);
       dispatch(calculateUserError(error));
     }
   };
@@ -167,7 +159,6 @@ const publicUserCalculate =
       const { data } = await axios.patch(`/public`, userParameters);
       dispatch(publicUserCalculateSuccess(data));
     } catch (error) {
-      notify(error.message);
       dispatch(publicUserCalculateError(error));
     }
   };

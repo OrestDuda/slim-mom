@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 
 export default function BgWrapper({ children }) {
   let location = useLocation();
-  console.log(location);
   let classNameSwitch;
   switch (location.pathname) {
     case '/':

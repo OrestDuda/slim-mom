@@ -15,7 +15,7 @@ const userSelectors = {
   getUserId,
   getUserNotRecommendedFood,
   getPublicUser,
-  getUserDailyLimit
+  getUserDailyLimit,
 };
 
 export default userSelectors;
