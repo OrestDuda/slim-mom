@@ -1,21 +1,9 @@
-// import styles from "./RegistrationForm.module.scss";
-// import React from "react";
-
-// const RegistrationForm = () => {
-//     return(<h1>REGISTER FORM</h1>)
-// }
-
-// export default RegistrationForm
-
 import React, { useCallback } from 'react';
 import { Form, Formik } from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
-
 import userOperations from '../../redux/user/userOperations';
-// import isLoading from '../';
-
 import FormCheck from '../FormCheck/FormCheck';
 import Button from '../BasicButton/BasicButton';
 import styles from './RegistrationForm.module.scss';
@@ -44,7 +32,6 @@ const RegistrationForm = () => {
     values => {
       const { email, password, name } = values;
       const normalizedLogin = email.toLowerCase();
-
       dispatch(
         userOperations.register({ email: normalizedLogin, password, name }),
       );

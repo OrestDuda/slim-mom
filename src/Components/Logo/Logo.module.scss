@@ -1,37 +1,41 @@
 @import '../../index.scss';
 
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
 
-.logo{
-    display: flex;
-    align-items: center;
-    position: relative;
-    text-decoration: none;
-
-
-    font-family: "Gotham Pro";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 25px;
-    letter-spacing: 0.08em;
+  font-family: 'Gotham Pro';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 25px;
+  letter-spacing: 0.08em;
 }
 
-img{
-    display: inline-block;
-    position: absolute;
-    top: 0;
+img {
+  display: inline-block;
+  position: absolute;
+  top: 0;
 }
 
-.logo__text{
-    padding-left: 60px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+.logo__text {
+  padding-left: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.logo__slim{
-    color: $text-color;
+.logo__slim {
+  color: $text-color;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }
 
-.logo__mom{
-    color: $bg-color;
+.logo__mom {
+  color: $bg-color;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }

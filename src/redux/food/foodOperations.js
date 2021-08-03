@@ -1,5 +1,4 @@
 import axios from 'axios';
-import notify from '../../services/notify';
 import foodActions from './foodActions';
 
 let cancelToken;
@@ -19,7 +18,6 @@ const getFood = () => async dispatch => {
     const { data } = await axios.get('/catalogue/all');
     dispatch(fetchFoodSuccess(data.fullCatalogue));
   } catch (error) {
-    notify(error.message);
     dispatch(fetchFoodError(error));
   }
 };
@@ -40,7 +38,6 @@ const getFoodByQuery = query => async dispatch => {
     });
     dispatch(fetchFoodByQuerySuccess(data.results));
   } catch (error) {
-    notify(error.message);
     dispatch(fetchFoodByQueryError(error));
   }
 };
