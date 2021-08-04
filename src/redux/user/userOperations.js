@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { useSelector } from 'react-redux';
-import userSelectors from './userSelectors';
 import userActions from './userActions';
 import showError from '../../services/helper';
 const {
@@ -16,9 +14,6 @@ const {
   getCurrentUserRequest,
   getCurrentUserSuccess,
   getCurrentUserError,
-  addUserInfoRequest,
-  addUserInfoSuccess,
-  addUserInfoError,
   calculateUserRequest,
   calculateUserSuccess,
   calculateUserError,
@@ -99,28 +94,6 @@ const getCurrentUser = () => async (dispatch, getState) => {
   }
 };
 
-// const saveUserParameters =
-//   (height, age, currentWeight, desiredWeight, bloodType) => async dispatch => {
-//     const userParameters = {
-//       height,
-//       age,
-//       currentWeight,
-//       desiredWeight,
-//       bloodType,
-//     };
-//
-//     const userId = useSelector(userSelectors.getUserId);
-//
-//     dispatch(addUserInfoRequest());
-//     try {
-//       await axios.patch(`/users/${userId}`, userParameters);
-//       dispatch(addUserInfoSuccess());
-//     } catch (error) {
-//       notify(error.message);
-//       dispatch(addUserInfoError(error));
-//     }
-//   };
-
 const calculateLoggedInUser =
   ({ height, age, currentWeight, desiredWeight, bloodType }) =>
   async dispatch => {
@@ -168,7 +141,6 @@ const userOperations = {
   logIn,
   logOut,
   getCurrentUser,
-  // saveUserParameters,
   calculateLoggedInUser,
   publicUserCalculate,
 };

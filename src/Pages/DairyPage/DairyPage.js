@@ -46,7 +46,7 @@ const DiaryPage = () => {
       )}
 
       {width < breakpoint && (
-        <button className={styles.go} onClick={handleClick}></button>
+        <button className={styles.go} onClick={handleClick} />
       )}
     </Container>
   );

@@ -26,7 +26,7 @@ const getFoodByQuery = query => async dispatch => {
   // поиск еды по квери(условию)
 
   //Check if there are any previous pending requests
-  if (typeof cancelToken != typeof undefined) {
+  if (typeof cancelToken !== typeof undefined) {
     cancelToken.cancel('Operation canceled due to new request.');
   }
   //Save the cancel token for the current request

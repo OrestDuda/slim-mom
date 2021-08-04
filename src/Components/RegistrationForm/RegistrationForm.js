@@ -76,10 +76,7 @@ const RegistrationForm = () => {
             placeholder="Пароль *"
           />
           <div className={styles.btnThumb}>
-            <Link to="/login" className={styles.regBtn}>
-              {/*<Button view="btnReg">Вход</Button>*/}
-            </Link>
-            {/* <Button disabled={loading}>Регистрация</Button> */}
+            <Link to="/login" className={styles.regBtn} />
             <Button>Регистрация</Button>
           </div>
         </Form>

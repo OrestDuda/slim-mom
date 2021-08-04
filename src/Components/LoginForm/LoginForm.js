@@ -5,9 +5,6 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 
 import userOperations from '../../redux/user/userOperations';
-
-// import isLoading from '../';
-
 import FormCheck from '../FormCheck/FormCheck';
 import Button from '../BasicButton/BasicButton';
 
@@ -26,7 +23,6 @@ const loginSchema = Yup.object().shape({
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  //   const loading = useSelector(isLoading);
   const email = useCallback(
     (values, { resetForm }) => {
       const { email, password } = values;

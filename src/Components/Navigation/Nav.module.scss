@@ -3,7 +3,7 @@
   text-decoration: none;
   margin-right: 22px;
   color: $secondary-text-color;
-  font-family: 'Gotham Pro';
+  font-family: 'Gotham Pro', serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -24,7 +24,7 @@
   text-decoration: none;
   margin-right: 22px;
   color: $secondary-text-color;
-  font-family: 'Gotham Pro';
+  font-family: 'Gotham Pro', serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -84,11 +84,11 @@
   @media screen and (min-width: 768px) {
     order: 3;
     margin-right: 90px;
-    margin-left: 0px;
+    margin-left: 0;
   }
   @media screen and (min-width: 1280px) {
     order: 0;
-    margin-right: 0px;
+    margin-right: 0;
   }
 }
 .navBar button {

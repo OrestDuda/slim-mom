@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import userOperations from '../../redux/user/userOperations';
 import styles from '../CalculatorCalorieForm/CalculatorCalorieForm.module.scss';
 
