@@ -56,7 +56,6 @@ export default function App() {
             <PublicRoute path="/login" restricted redirectTo="/dairy">
               <LoginPage />
             </PublicRoute>
-
             <PrivateRoute path="/calculator" redirectTo="/login">
               <CalculatorPage />
             </PrivateRoute>
