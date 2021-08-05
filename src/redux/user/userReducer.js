@@ -38,7 +38,6 @@ const userParameters = {
 const publicUser = createReducer(userParameters, {
   [publicUserCalculateSuccess]: (_, { payload }) => payload,
 });
-
 const user = createReducer(initialUser, {
   [registerSuccess]: (state, { payload }) => {
     return { ...state, ...payload.user };

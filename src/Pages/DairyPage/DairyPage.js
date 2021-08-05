@@ -17,7 +17,7 @@ const DiaryPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(mealsOperations.getMealsByDay());
-  }, [date]);
+  }, [date, dispatch]);
 
   /**
    * Option 2 - get all catalogue

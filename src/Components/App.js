@@ -37,12 +37,11 @@ export default function App() {
     dispatch(userOperations.getCurrentUser());
   }, [dispatch]);
   const userLoggedIn = useSelector(userSelectors.getIfLoggedIn);
-
   return (
     <>
       <BgWrapper>
-        <Header />
         <Suspense fallback={<Loader />}>
+          <Header />
           <Switch>
             <PublicRoute path="/" exact restricted redirectTo="/calculator">
               <MainPage />
@@ -57,6 +56,7 @@ export default function App() {
             <PublicRoute path="/login" restricted redirectTo="/dairy">
               <LoginPage />
             </PublicRoute>
+
             <PrivateRoute path="/calculator" redirectTo="/login">
               <CalculatorPage />
             </PrivateRoute>
@@ -67,8 +67,8 @@ export default function App() {
               <DiaryAddProductForm />
             </PrivateRoute>
           </Switch>
+          {userLoggedIn && <RightSideBar />}
         </Suspense>
-        {userLoggedIn && <RightSideBar />}
       </BgWrapper>
     </>
   );

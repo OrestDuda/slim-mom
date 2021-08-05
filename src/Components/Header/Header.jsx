@@ -9,6 +9,7 @@ import userSelectors from '../../redux/user/userSelectors';
 
 export default function Header() {
   const userLoggedIn = useSelector(userSelectors.getIfLoggedIn);
+
   return (
     <header>
       <Logo />

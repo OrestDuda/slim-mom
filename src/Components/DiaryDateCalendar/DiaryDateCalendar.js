@@ -22,6 +22,7 @@ const DiaryDateCalendar = () => {
         dateFormat="dd.MM.yyyy"
         selected={startDate}
         onChange={date => onChange(date)}
+        maxDate={new Date()}
       />
       <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
         <defs />

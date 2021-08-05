@@ -11,6 +11,7 @@ export default function RightSideBar() {
   const forday = useSelector(mealsSelectors.getDate);
 
   let sumKcal = 0;
+  // eslint-disable-next-line array-callback-return
   mealsOnDay.map(item => {
     Number(item.kcal);
     sumKcal += item.kcal;

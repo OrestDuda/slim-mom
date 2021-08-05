@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import userOperations from '../../redux/user/userOperations';
 import styles from '../CalculatorCalorieForm/CalculatorCalorieForm.module.scss';
+import { useHistory } from 'react-router-dom';
 
 export default function CalculatorCalorieForm() {
   const [currentUser, setCurrentUser] = useState({
@@ -12,7 +13,7 @@ export default function CalculatorCalorieForm() {
     bloodType: '',
   });
   const dispatch = useDispatch();
-
+  let history = useHistory();
   const BloodType = {
     FIRST_GROUP: '1',
     SECOND_GROUP: '2',
@@ -46,6 +47,7 @@ export default function CalculatorCalorieForm() {
       desiredWeight: '',
       bloodType: '1',
     });
+    history.push('/dairy');
   };
 
   return (

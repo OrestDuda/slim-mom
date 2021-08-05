@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/lab": "^4.0.0-alpha.60",
+    "@material-ui/system": "^4.12.1",
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -58,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@material-ui/styles": "^4.11.4",
     "eslint": "^7.31.0",
     "formik": "^2.2.9",
     "prettier": "^2.3.2",

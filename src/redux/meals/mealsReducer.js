@@ -14,6 +14,7 @@ const {
   deleteFoodFromMealsError,
   changeDate,
 } = mealsActions;
+
 const initialMeals = { onDay: null, food: [] };
 const meals = createReducer(initialMeals, {
   [fetchMealsByDaySuccess]: (state, { payload }) => {
